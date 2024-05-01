@@ -1,0 +1,84 @@
+.game-card {
+    background-color: rgba(94, 94, 94, 0.1) !important;
+    /* border: 1px solid #292727; Darker border color */
+    padding: 20px;
+    margin: 20px;
+    color: #fff !important;
+    width: 200px !important;
+    height: 350px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+#game-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow game cards to wrap to the next row */
+    justify-content: center;
+}
+
+.game-card .row {
+    display: flex;
+    justify-content: center;
+}
+
+.game-icon {
+    max-width: 128px;
+    max-height: 128px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-title {
+    font-size: 2rem; /* Increased title size */
+    margin-bottom: 10px;
+    text-decoration: none !important;
+    color: #fff !important; /* Light title color */
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #ccc; /* Slightly lighter text color */
+}
+
+.btn-success {
+    background-color: #81ff47;
+    color: #333; /* Dark button text color */
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #316b29;
+}
+
+/* Style the search bar */
+.game-search input[type="text"] {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto; /* Center the search input */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 50vw;
+    background-color: #4b4343;
+    box-shadow: 0 2px 4px rgba(95, 91, 91, 0.1);
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+input:focus {
+    border: 0;
+    outline: 0;
+}

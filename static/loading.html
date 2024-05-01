@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/assets/css/loader/index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- <script src="/assets/js/loader/particles.js"></script> -->
+  <style>
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 8px solid #FFF;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body style="background-color: #1c1c1c;">
+  <br>
+  <div id="particles-js"></div>
+  <div class="themesExcluded" style="justify-content: center;align-items: center;display: flex;height: 50vh;">
+    <br>
+    <span class="loader"></span>
+    <h1 style="font-family:poppins;color:white;font-size:40px;">Processing request...</h1>
+  </div>
+  <script src="/assets/js/loader/themes.js"></script>
+  <script>
+    var nav = document.querySelectorAll('nav');
+    nav.forEach(function (navElement) {
+      navElement.style.transition = '1s';
+      navElement.style.backgroundColor = 'rgba(255, 251, 0, 0)';
+      navElement.style.border = '1px solid transparent';
+      navElement.style.boxShadow = '0 0 8px transparent';
+      navElement.style.opacity = '100%';
+    });
+  </script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
