@@ -1,15 +1,3 @@
-window.onload = function(){
-    setInterval(updatetime, 1000);
-    if (localStorage.getItem('snow') === 'true') {
-      TurnOnSnowOnOtherPages();
-  }
-};
-
-function updatetime(){
-    var d = new Date();
-var n = d.toLocaleTimeString();
-document.getElementById('realtime').innerText = n;
-}
 
 
 
@@ -24,6 +12,9 @@ function TurnOnSnowOnOtherPages(){
 }
 
 
+if (localStorage.getItem('snow') === 'true') {
+  TurnOnSnowOnOtherPages();
+}
 
 
 // __________________________

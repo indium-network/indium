@@ -1,18 +1,33 @@
 [
     {
-      "url": "/gameplayer/index.html?retrobowl",
-      "imageSrc": "https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ",
-      "name": "Retro Bowl"
+      "url": "/PLEASE DO APPS LATER",
+      "imageSrc": "/assets/appsimg/chatgpt.svg",
+      "name": "ChatGPT",
+      "description": "chat with ai"
     },
     {
         "url": "/gameplayer/index.html?retrobowl",
-        "imageSrc": "https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ",
-        "name": "tag"
+        "imageSrc": "/assets/appsimg/discord.jpg",
+        "name": "Discord",
+        "description": "Chat with friends you dont have"
       },
       {
         "url": "/gameplayer/index.html?retrobowl",
-        "imageSrc": "https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ",
-        "name": "basket random"
+        "imageSrc": "/assets/appsimg/tiktok.jpg",
+        "name": "TikTok",
+        "description": "cringe^2 Million"
+      },
+      {
+        "url": "/gameplayer/index.html?retrobowl",
+        "imageSrc": "/assets/appsimg/reddit.jpg",
+        "name": "Reddit",
+        "description": "Internet Fighting"
+      },
+       {
+        "url": "/gameplayer/index.html?retrobowl",
+        "imageSrc": "/assets/appsimg/youtube.png",
+        "name": "Youtube",
+        "description": "Watch tv"
       }
     
   ]

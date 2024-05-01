@@ -252,7 +252,7 @@ body{
     border-radius: 20%;
 }
 
-#realtime{
+#realtimeupdateplease{
     z-index: -1;
     max-width: 10vw;
     text-decoration: none;
@@ -353,6 +353,8 @@ a{
 }
 
 .searchbar:focus{
+    /* height: 10vh; */
+    /* font-size: 20px; */
     border: 1px solid rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.8);
     width: 40vw;

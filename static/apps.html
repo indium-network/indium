@@ -15,7 +15,7 @@
 
 </head>
 
-<body style="overflow: initial;">
+<body style="overflow-x: hidden;">
     <div style="width: 100vw;height: 100vh;z-index: -100000;position: absolute;" id="particles-js"></div>
     <div id="fixed-nav-bar" class="fixed-nav-bar">
         <div class="fixed-nav-bar-container ">
@@ -59,19 +59,135 @@
       </nav>
     </header>
 
+<style>
+  .searchforapps{
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.3);
+padding: 15px 30px 15px 30px;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    display: flex;
+    text-align: center;
+  }
+  .app-card{
+    
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.3);
+    width: 300px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
+    transition: 0.7s;
+  }
+  .app-list{
+    display: flex;
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .description{
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .app-image{
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+    object-fit: cover;
+    /* aspect-ratio: inherit; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.7s !important;
+    text-align: center;
+    height: 150px;
+    /* transition: ease-in-out; */
+    width: 270px;
+    border-radius: 15px !important;
+  }
+
+  .app-image:hover{
+    border-radius: 5px !important;
+    /* transition: ease-in-out; */
+  }
+
+
+  .app-card:hover {
+    background-size: 400% 400%;
+  background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>
+
 <main style="width: 100vw;">
     <br><br><br><br><br><br><br><br><br><br>
+    <center>
     <div class="game-search">
-        <input type="text" id="searchInput" placeholder="Search for games...">
+        <input type="text" class="searchforapps" id="searchInput" placeholder="Search for games...">
     </div>
-    <div id="game-list"></div>
-
+  </center>
+  <br><br>
+    <div id="app-list" class="app-list">
+      <div class="app-card">
+        <img class="app-image" src="/assets/appsimg/chatgpt.svg" alt="">
+        <h1 class="title">ChatGPT</h1>
+        <p class="description">
+          Lorem, ipsum dolor sit ...
+        </p>
+      </div>
+    
+    <div id="app-list">
+      <div class="app-card">
+        <img class="app-image" src="/assets/appsimg/x.png" alt="">
+        <h1 class="title">X (Twitter)</h1>
+        <p class="description">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam repudiandae voluptas dolor ipsa, rerum iure eligendi magni, maiores iusto, vero illum enim ad nam nemo nisi odio culpa cum quas.
+        </p>
+      </div>
+    </div>
+    <div id="app-list">
+      <div class="app-card">
+        <img class="app-image" src="/assets/appsimg/tiktok.jpg" alt="">
+        <h1 class="title">TikTok</h1>
+        <p class="description">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam repudiandae voluptas dolor ipsa, rerum iure eligendi magni, maiores iusto, vero illum enim ad nam nemo nisi odio culpa cum quas.
+        </p>
+      </div>
+    </div>
+    <div id="app-list">
+      <div class="app-card">
+        <img class="app-image" src="/assets/appsimg/reddit.jpg" alt="">
+        <h1 class="title">Reddit</h1>
+        <p class="description">
+          Lorem, ipsum dolor sit ...
+        </p>
+      </div>
+    </div>
+  </div>
     <script>
         // Fetch game data from the separate JSON file
 fetch("/assets/json/apps.json")
 .then(response => response.json())
     .then(data => {
-        const gameList = document.getElementById("game-list");
+        const gameList = document.getElementById("app-list");
         const searchInput = document.getElementById("searchInput");
 
         // Function to filter games based on search query
@@ -92,18 +208,20 @@ fetch("/assets/json/apps.json")
                 // Create a new row after every 3 cards
                 if (cardCount % 3 === 0) {
                     const row = document.createElement("div");
-                    row.classList.add("row");
+                    row.classList.add("app-list");
                     gameList.appendChild(row);
                 }
 
                 const gameCard = document.createElement("div");
-                gameCard.classList.add("game-card", "card", "col-md-4");
                 gameCard.innerHTML = `
-                <a style'color: #fff !important;' href="${game.url}">
-                    <h2 style='text-decoration: none !important;' class="card-title">${game.name}</h2>
-                    <img src="${game.imageSrc}" alt="${game.name} Icon" class="game-icon card-img-top">
-                    <p class="card-text">${game.tags ? game.tags : ""}</p>
-                   </a>
+               
+                <div class="app-card">
+        <img class="app-image" src="${game.imageSrc}" alt="">
+        <h1 class="title">${game.name}</h1>
+        <p class="description">
+          ${game.description}
+        </p>
+      </div>
                 `;
                 gameList.lastChild.appendChild(gameCard);
                 
@@ -120,7 +238,7 @@ fetch("/assets/json/apps.json")
     })
     .catch(error => console.error("Error loading JSON:", error));
     </script>
-    <div class="bottomfooter">
+    <!-- <div class="bottomfooter">
         <div class="leftside">
             <a id="roundiconbuttonn" class="roundiconbuttonn" href="https://discord.gg/sWPHCdxCPU"><i onclick="window.location.href= 'DISCORD URL'" class="fa-brands fa-discord"></i></a>
         </div>
@@ -131,8 +249,87 @@ fetch("/assets/json/apps.json")
             <a class="legalbutton" href="#">Privacy Policy</a>&ThickSpace;|&ThickSpace;
             <a href="eua" class="legalbutton">EULA</a>
         </div>
-    </div>
+    </div> -->
 </main>
+<style type="text/css"> 
+  .context-menu {
+    transition: 0.7s; 
+    border-radius: 10px;
+    position: absolute; 
+    text-align: center; 
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
+    backdrop-filter: saturate(180%) blur(10px);
+  } 
+
+  .context-menu ul { 
+    padding: 0px; 
+    margin: 0px; 
+    min-width: 150px; 
+    list-style: none; 
+  } 
+
+  .context-menu ul li { 
+    padding-bottom: 7px; 
+    padding-top: 7px; 
+  } 
+
+  .context-menu ul li a { 
+    transition: 0.2s;
+    text-decoration: none; 
+    color: #000; 
+  } 
+  .context-menu ul li a:hover{
+    color: white;
+  }
+
+  .context-menu ul li {
+    transition: 0.7s;
+  }
+  
+  .context-menu ul li:hover { 
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
+  } 
+</style> 
+
+<div id="contextMenu" class="context-menu" style="display:none"> 
+  <ul> 
+    <li><a id="tabcloaksubmenu" href="#">Tab Cloak</a>
+      <ul id="submenu" style="display: none;">
+        <li><a href="#">Enabled</a></li>
+        <li><a href="#">Disabled</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About:blank</a></li>
+    <li><a href="/!">Apps</a></li>
+    <li><a href="/0">Games</a></li>
+    <li><a href="/=">Settings</a></li>
+  </ul> 
+</div> 
+
+<script>
+  document.onclick = hideMenu; 
+  document.oncontextmenu = rightClick; 
+
+  function hideMenu() { 
+    document.getElementById("contextMenu").style.display = "none";
+  } 
+
+  function rightClick(e) { 
+    e.preventDefault(); 
+
+    if (document.getElementById("contextMenu").style.display == "block") {
+      hideMenu();
+    } else { 
+      var menu = document.getElementById("contextMenu"); 
+      menu.style.display = 'block'; 
+      menu.style.left = e.pageX + "px"; 
+      menu.style.top = e.pageY + "px"; 
+    } 
+  } 
+</script>
 
 
 <script src="/assets/js/script.js"></script>
