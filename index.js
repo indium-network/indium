@@ -31,7 +31,7 @@ app.get('/~', (req, res) => {
   res.sendFile(path.join(__dirname, './static/apps.html'));
 });
 app.get('/0', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/gms.html'));
+  res.sendFile(path.join(__dirname, './static/loadmore.html'));
 });
 app.get('/=', (req, res) => {
   res.sendFile(path.join(__dirname, './static/settings.html'));
@@ -39,9 +39,10 @@ app.get('/=', (req, res) => {
 app.get('/mobile-lock', (req, res) => {
   res.sendFile(path.join(__dirname, './static/mobile.html'));
 });
-// app.get('/lessons', (req, res) => {
-//   res.sendFile(path.join(__dirname, './static/agloader.html'));
-// });
+
+app.get('/@', (req, res) => {
+  res.sendFile(path.join(__dirname, './static/agloader.html'));
+});
 // app.get('/credits', (req, res) => {
 //   res.sendFile(path.join(__dirname, './static/credits.html'));
 // });

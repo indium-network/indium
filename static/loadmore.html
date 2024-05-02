@@ -151,8 +151,8 @@ padding: 15px 30px 15px 30px;
   <br><br>
   
     <div id="app-list" class="app-list">
-  </div>
-  <button class="btn btn-danger" id="loadMoreButton"></button>
+    </div>
+    <button id="loadMoreButton" class="btn btn-primary">Load More</button>
     <script>
       function encode(str) {
     if (!str) return str;
@@ -177,10 +177,8 @@ function openAg(url, ag) {
 
 
 
-
-
-    // Fetch game data from the separate JSON file
-    fetch("/assets/json/games.json")
+        // Fetch game data from the separate JSON file
+        fetch("/assets/json/games.json")
     .then(response => response.json())
     .then(data => {
         const gameList = document.getElementById("app-list");
@@ -225,124 +223,38 @@ function openAg(url, ag) {
 
         // Function to display a game card
         const displayGame = (game) => {
-            const isBroken = game.broken === true;
-            const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
+          const isBroken = game.broken === true;
+                const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
             const gameCard = document.createElement("div");
             gameCard.innerHTML = `
                 <div data-url="${game.url}" data-name="${game.name}" class="app-card">
                     <img class="app-image" src="${game.imageSrc}" alt="">
                     <br>
                     <h1 style="color: ${titleColor};" class="title">${game.name}</h1>
+                    <p class="description">
+                        ${game.description}
+                    </p>
                     <button class="btn btn-success" id="launchapp">Launch</button>
                 </div>
             `;
             gameList.appendChild(gameCard);
         };
 
-        // Call filterGames() initially to load the games
+        // Initial display of games
         filterGames();
+
+        // Event listener for search input
+        searchInput.addEventListener("input", filterGames);
 
         // Event listener for the "Load More" button click
         loadMoreButton.addEventListener("click", () => {
             gamesDisplayed += 5; // Increase the counter by 5
             filterGames(); // Redisplay the games
         });
-
-        // Event listener for search input
-        searchInput.addEventListener("input", filterGames);
     })
     .catch(error => console.error("Error loading JSON:", error));
-
-    // Call filterGames() initially to load the games
-    filterGames();
-   
-
-
-    // Event listener for the "Launch" button click
-    document.addEventListener("click", function(event) {
-        if (event.target && event.target.id === "launchapp") {
-            // Find the parent node (game card) of the clicked button
-            const gameCard = event.target.closest(".app-card");
-
-            // Extract URL and name from the game card
-            const gameUrl = gameCard.getAttribute("data-url");
-            const gameName = gameCard.getAttribute("data-name");
-
-            // Call the openAg function with the extracted URL and name
-            openAg(gameUrl, gameName);
-        }
-    });
     </script>
-    <!-- <div class="bottomfooter">
-        <div class="leftside">
-            <a id="roundiconbuttonn" class="roundiconbuttonn" href="https://discord.gg/sWPHCdxCPU"><i onclick="window.location.href= 'DISCORD URL'" class="fa-brands fa-discord"></i></a>
-        </div>
-        <div class="centerside">
-            <p class="icnbatnalt" id="realtime">03:14:26</p>
-        </div>
-        <div class="rightside">
-            <a class="legalbutton" href="#">Privacy Policy</a>&ThickSpace;|&ThickSpace;
-            <a href="eua" class="legalbutton">EULA</a>
-        </div>
-    </div> -->
 </main>
-<style type="text/css"> 
-  .context-menu {
-    transition: 0.7s; 
-    border-radius: 10px;
-    position: absolute; 
-    text-align: center; 
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
-    backdrop-filter: saturate(180%) blur(10px);
-  } 
-
-  .context-menu ul { 
-    padding: 0px; 
-    margin: 0px; 
-    min-width: 150px; 
-    list-style: none; 
-  } 
-
-  .context-menu ul li { 
-    padding-bottom: 7px; 
-    padding-top: 7px; 
-  } 
-
-  .context-menu ul li a { 
-    transition: 0.2s;
-    text-decoration: none; 
-    color: #fff; 
-  } 
-  .context-menu ul li a:hover{
-    color: rgba(255, 255, 255, 0.659);
-  }
-
-  .context-menu ul li {
-    transition: 0.7s;
-  }
-  
-  .context-menu ul li:hover { 
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
-  } 
-</style> 
-
-<div id="contextMenu" class="context-menu" style="display:none"> 
-  <ul> 
-    <li><a id="tabcloaksubmenu" href="#">Tab Cloak (Toggle)</a>
-      <ul id="submenu" style="display: none;">
-        <li><a href="#">Enabled</a></li>
-        <li><a href="#">Disabled</a></li>
-      </ul>
-    </li>
-    <li href="javascript:AB()" onclick="AB()"><a href="javascript:AB()" onclick="AB()">About:blank</a></li>
-    <li><a href="/!">Apps</a></li>
-    <li><a href="/0">Games</a></li>
-    <li><a href="/=">Settings</a></li>
-  </ul> 
-</div> 
 
 <script>
   document.onclick = hideMenu; 
@@ -366,14 +278,12 @@ function openAg(url, ag) {
   } 
 </script>
 
-
 <script src="/assets/js/script.js"></script>
 <script rel="preload" src="/assets/js/main.js"></script>
-  <script src="/assets/js/index.js"></script>
-<!-- <script src="/assets/js/snow.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+<script src="/assets/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
 </body>
 </html>

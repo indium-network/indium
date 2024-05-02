@@ -23,9 +23,9 @@
           </a>
         </div>
         <div style="color: #fff;" class="fixed-nav-bar-right">
-          <a class="navbar-link" href="/games.html">
+          <a class="navbar-link" href="/0">
             <i class="fa-solid fa-gamepad navbar-icon"></i>Games </a>
-          <a class="navbar-link" href="/apps.html">
+          <a class="navbar-link" href="/~">
             <i class="fa-duotone fa-grid-2 navbar-icon"></i>Apps
           </a>
           <a class="navbar-link" href="/=">
@@ -75,14 +75,14 @@
        
     </div>
     <br>
-    <p class="text-center" style="color: #fff;">Some Random Words</p>
+    <p class="text-center" id="placeholder" style="color: #fff;">Some Random Words</p>
 
     <div class="bottomfooter">
         <div class="leftside">
             <a id="roundiconbuttonn" class="roundiconbuttonn" href="https://discord.gg/sWPHCdxCPU"><i onclick="window.location.href= 'DISCORD URL'" class="fa-brands fa-discord"></i></a>
         </div>
         <div class="centerside">
-            <p class="icnbatnalt" id="realtimeupdateplease">TIME STOPPED WORKING PLEASE FIX</p>
+            <p class="icnbatnalt" id="realtime"></p>
         </div>
         <div class="rightside">
             <a class="legalbutton" href="#">Privacy Policy</a>&ThickSpace;|&ThickSpace;
@@ -91,21 +91,6 @@
     </div>
 </main>
 
-<script>
-  window.onload = function(){
-    setInterval(updatetime, 1000);
-};
-
-
-
-
-function updatetime(){
-    var d = new Date();
-var n = d.toLocaleTimeString();
-document.getElementById('realtimeupdateplease').innerText = n;
-}
-
-</script>
 <script src="/assets/js/script.js"></script>
 <script rel="preload" src="/assets/js/main.js"></script>
   <script src="/assets/js/index.js"></script>

@@ -24,9 +24,9 @@
           </a>
         </div>
         <div style="color: #fff;" class="fixed-nav-bar-right">
-          <a class="navbar-link" href="/games.html">
+          <a class="navbar-link" href="/0">
             <i class="fa-solid fa-gamepad navbar-icon"></i>Games </a>
-          <a class="navbar-link" href="/apps.html">
+          <a class="navbar-link" href="/~">
             <i class="fa-duotone fa-grid-2 navbar-icon"></i>Apps
           </a>
           <a class="navbar-link" href="/=">
@@ -85,15 +85,19 @@ padding: 15px 30px 15px 30px;
     display: flex;
     color: #fff;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  .description{
-    white-space: nowrap;
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-  }
+    text-overflow: ellipsis;
+}
+
   .app-image{
     background-size: cover;
   background-repeat: no-repeat;
@@ -145,47 +149,36 @@ padding: 15px 30px 15px 30px;
     </div>
   </center>
   <br><br>
+  
     <div id="app-list" class="app-list">
-      <div class="app-card">
-        <img class="app-image" src="/assets/appsimg/chatgpt.svg" alt="">
-        <h1 class="title">ChatGPT</h1>
-        <p class="description">
-          Lorem, ipsum dolor sit ...
-        </p>
-      </div>
-    
-    <div id="app-list">
-      <div class="app-card">
-        <img class="app-image" src="/assets/appsimg/x.png" alt="">
-        <h1 class="title">X (Twitter)</h1>
-        <p class="description">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam repudiandae voluptas dolor ipsa, rerum iure eligendi magni, maiores iusto, vero illum enim ad nam nemo nisi odio culpa cum quas.
-        </p>
-      </div>
-    </div>
-    <div id="app-list">
-      <div class="app-card">
-        <img class="app-image" src="/assets/appsimg/tiktok.jpg" alt="">
-        <h1 class="title">TikTok</h1>
-        <p class="description">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam repudiandae voluptas dolor ipsa, rerum iure eligendi magni, maiores iusto, vero illum enim ad nam nemo nisi odio culpa cum quas.
-        </p>
-      </div>
-    </div>
-    <div id="app-list">
-      <div class="app-card">
-        <img class="app-image" src="/assets/appsimg/reddit.jpg" alt="">
-        <h1 class="title">Reddit</h1>
-        <p class="description">
-          Lorem, ipsum dolor sit ...
-        </p>
-      </div>
-    </div>
   </div>
     <script>
+      function encode(str) {
+    if (!str) return str;
+    return encodeURIComponent(
+        str
+            .toString()
+            .split('')
+            .map((char, ind) =>
+                ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+            )
+            .join('')
+    );
+}
+
+function openAg(url, ag) {
+  localStorage.setItem("currentAg", ag)
+  
+  agU = encode(url);
+  localStorage.setItem('agUrl', agU);
+  location.href = '/@';
+}
+
+
+
         // Fetch game data from the separate JSON file
-fetch("/assets/json/apps.json")
-.then(response => response.json())
+        fetch("/assets/json/apps.json")
+    .then(response => response.json())
     .then(data => {
         const gameList = document.getElementById("app-list");
         const searchInput = document.getElementById("searchInput");
@@ -193,41 +186,50 @@ fetch("/assets/json/apps.json")
         // Function to filter games based on search query
         const filterGames = () => {
             const searchTerm = searchInput.value.toLowerCase();
-            const filteredGames = data.filter(game =>
-                game.name.toLowerCase().includes(searchTerm)
+
+            // Filter broken games and non-broken games
+            const brokenGames = data.filter(game =>
+                game.name.toLowerCase().includes(searchTerm) && game.broken
+            );
+            const nonBrokenGames = data.filter(game =>
+                game.name.toLowerCase().includes(searchTerm) && !game.broken
             );
 
             // Clear existing game list
             gameList.innerHTML = "";
 
-            // Counter for tracking the number of cards
-            let cardCount = 0;
+            
 
-            // Display filtered games
-            filteredGames.forEach(game => {
-                // Create a new row after every 3 cards
-                if (cardCount % 3 === 0) {
-                    const row = document.createElement("div");
-                    row.classList.add("app-list");
-                    gameList.appendChild(row);
-                }
-
-                const gameCard = document.createElement("div");
-                gameCard.innerHTML = `
-               
-                <div class="app-card">
-        <img class="app-image" src="${game.imageSrc}" alt="">
-        <h1 class="title">${game.name}</h1>
-        <p class="description">
-          ${game.description}
-        </p>
-      </div>
-                `;
-                gameList.lastChild.appendChild(gameCard);
-                
-                // Increment the card count
-                cardCount++;
+            // Display non-broken games
+            nonBrokenGames.forEach(game => {
+                displayGame(game);
             });
+            // Display broken games
+            brokenGames.forEach(game => {
+                displayGame(game);
+            });
+        };
+
+        // Function to display a game card
+        const displayGame = (game) => {
+          const isBroken = game.broken === true;
+                const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
+            const gameCard = document.createElement("div");
+            gameCard.innerHTML = `
+                <div data-url="${game.url}" data-name="${game.name}" class="app-card">
+                    <img class="app-image" src="${game.imageSrc}" alt="">
+                    <br>
+                    <h1 style="color: ${titleColor};" class="title">${game.name}</h1>
+                    <p class="description">
+                        ${game.description}
+                    </p>
+                    <button class="btn btn-success" id="launchapp">Launch</button>
+                </div>
+            `;
+            // if (game.broken == true) {
+            //       document.getElementById('title').style.color = 'red';
+            //     }
+            gameList.appendChild(gameCard);
         };
 
         // Initial display of all games
@@ -237,6 +239,26 @@ fetch("/assets/json/apps.json")
         searchInput.addEventListener("input", filterGames);
     })
     .catch(error => console.error("Error loading JSON:", error));
+
+
+
+    
+
+
+    // Event listener for the "Launch" button click
+    document.addEventListener("click", function(event) {
+        if (event.target && event.target.id === "launchapp") {
+            // Find the parent node (game card) of the clicked button
+            const gameCard = event.target.closest(".app-card");
+
+            // Extract URL and name from the game card
+            const gameUrl = gameCard.getAttribute("data-url");
+            const gameName = gameCard.getAttribute("data-name");
+
+            // Call the openAg function with the extracted URL and name
+            openAg(gameUrl, gameName);
+        }
+    });
     </script>
     <!-- <div class="bottomfooter">
         <div class="leftside">
@@ -277,10 +299,10 @@ fetch("/assets/json/apps.json")
   .context-menu ul li a { 
     transition: 0.2s;
     text-decoration: none; 
-    color: #000; 
+    color: #fff; 
   } 
   .context-menu ul li a:hover{
-    color: white;
+    color: rgba(255, 255, 255, 0.659);
   }
 
   .context-menu ul li {
@@ -296,13 +318,13 @@ fetch("/assets/json/apps.json")
 
 <div id="contextMenu" class="context-menu" style="display:none"> 
   <ul> 
-    <li><a id="tabcloaksubmenu" href="#">Tab Cloak</a>
+    <li><a id="tabcloaksubmenu" href="#">Tab Cloak (Toggle)</a>
       <ul id="submenu" style="display: none;">
         <li><a href="#">Enabled</a></li>
         <li><a href="#">Disabled</a></li>
       </ul>
     </li>
-    <li><a href="#">About:blank</a></li>
+    <li href="javascript:AB()" onclick="AB()"><a href="javascript:AB()" onclick="AB()">About:blank</a></li>
     <li><a href="/!">Apps</a></li>
     <li><a href="/0">Games</a></li>
     <li><a href="/=">Settings</a></li>

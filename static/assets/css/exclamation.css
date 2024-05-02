@@ -10,7 +10,7 @@
 #urlBar {
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom right, rgb(115, 11, 14), rgb(10, 23, 87)) !important;
+    background-color: rgb(115, 11, 14) rgb(10, 23, 87) !important;
     padding: 8px;
     position: fixed;
     top: 0;

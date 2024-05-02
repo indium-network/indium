@@ -1,33 +1,91 @@
 [
     {
-      "url": "/PLEASE DO APPS LATER",
+      "url": "https://chat.openai.com",
       "imageSrc": "/assets/appsimg/chatgpt.svg",
       "name": "ChatGPT",
-      "description": "chat with ai"
+      "description": "Engage in natural conversations with an AI assistant."
     },
     {
-        "url": "/gameplayer/index.html?retrobowl",
+      "url": "https://spotify.com/",
+      "imageSrc": "/assets/appsimg/spotify.png",
+      "name": "Spotify",
+      "description": "Discover, stream, and enjoy endless music.",
+      "broken": true
+    },
+    {
+        "url": "https://discord.com",
         "imageSrc": "/assets/appsimg/discord.jpg",
         "name": "Discord",
-        "description": "Chat with friends you dont have"
+        "description": "Voice, video, and text chats for communities worldwide"
       },
       {
-        "url": "/gameplayer/index.html?retrobowl",
+        "url": "https://www.xbox.com/en-US/play",
+        "imageSrc": "/assets/appsimg/xcloud.png",
+        "name": "Xbox XCloud",
+        "description": "Play Xbox Cloud Gaming (Beta) on Xbox.com. Use your Xbox Game Pass Ultimate membership to play 100s of consoles games on PC and supported mobile devices."
+      },
+      {
+        "url": "https://yewtu.be/",
+        "imageSrc": "/assets/appsimg/youtube.png",
+        "name": "Invidious",
+        "description": "An alternative front-end to YouTube",
+        "broken": true
+      },
+      
+      {
+        "url": "https://github.com/hypackel/indium",
+        "imageSrc": "/assets/appsimg/gh.png",
+        "name": "Github",
+        "description": "GitHub is where people build software. More than 100 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+      },
+      {
+        "url": "https://tiktok.com",
         "imageSrc": "/assets/appsimg/tiktok.jpg",
         "name": "TikTok",
-        "description": "cringe^2 Million"
+        "description": "Short videos, music, and creative content showcase"
       },
       {
-        "url": "/gameplayer/index.html?retrobowl",
+        "url": "https://play.geforcenow.com/mall/",
+        "imageSrc": "/assets/appsimg/geforce.png",
+        "name": "Geforce Now",
+        "description": "Instantly play the most demanding PC games and seamlessly play across your devices."
+      },
+      {
+        "url": "https://reddit.com",
         "imageSrc": "/assets/appsimg/reddit.jpg",
         "name": "Reddit",
-        "description": "Internet Fighting"
+        "description": "Join communities, share stories, explore endless content"
+      },
+      {
+        "url": "https://twitch.tv",
+        "imageSrc": "/assets/appsimg/twitch.jpg",
+        "name": "Twitch",
+        "description": "Connect, watch, chat, and stream live gaming content."
+      },
+      {
+        "url": "https://vscode.dev",
+        "imageSrc": "/assets/appsimg/vscode.png",
+        "name": "VS Code",
+        "description": "Build with Visual Studio Code, anywhere, anytime, entirely in your browser."
+      },
+      {
+        "url": "https://twitter.com",
+        "imageSrc": "/assets/appsimg/x.png",
+        "name": "X (Twitter)",
+        "description": "From breaking news and entertainment to sports and politics, get the full story with all the live commentary."
+      },
+      {
+        "url": "https://twitch.tv",
+        "imageSrc": "/assets/appsimg/twitch.jpg",
+        "name": "Twitch",
+        "description": "Connect, watch, chat, and stream live gaming content."
       },
        {
-        "url": "/gameplayer/index.html?retrobowl",
+        "url": "https://youtube.com",
         "imageSrc": "/assets/appsimg/youtube.png",
         "name": "Youtube",
-        "description": "Watch tv"
+        "description": "Watch, share, and enjoy videos anytime, anywhere.",
+        "broken": true
       }
     
   ]

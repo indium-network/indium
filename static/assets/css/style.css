@@ -252,7 +252,7 @@ body{
     border-radius: 20%;
 }
 
-#realtimeupdateplease{
+#realtime{
     z-index: -1;
     max-width: 10vw;
     text-decoration: none;

@@ -1,3 +1,6 @@
+function script(text) {
+  console.log("%cScript Injection", "color: cyan; font-weight: 600; background: black; padding: 0 5px; border-radius: 5px", text);
+}
 function loadScript(src, callback) {
   var script = document.createElement("script");
   script.type = "text/javascript";
@@ -27,17 +30,28 @@ loadScript("/uv/uv.handler.js", function () {
       window.navigator.serviceWorker.register("/sw.js", {
         scope: __uv$config.prefix,
     });
-    console.log("[✔️] UV Loaded");
+   script("UV Loaded");
     });
   });
 });
 
 loadCSS('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css', function() {
-    console.log('[✔️] Bootstrap icons');
+  script('Bootstrap icons Loaded');
 });
 
+
+// ! BREAKS EVERYTHING 
+// loadCSS('https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css', function() {
+//   script('[✔️] Font Awesome Pro');
+// });
+
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css', function() {
+  script('Font Awesome Free CDN Loaded');
+});
+
+
 if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-    console.log("[✔️] Index.html");
+  script("Page Loaded");
     function clock() {
       const now = new Date();
       let hours = now.getHours();
@@ -52,7 +66,7 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
       }
     
       const timeString = `${hours}:${minutes}:${seconds}`;
-      document.getElementById("time").textContent = timeString;
+      document.getElementById("realtime").textContent = timeString;
     }
     
     clock();
@@ -60,17 +74,17 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
     
     const options = [
       "Right-Click to access more features",
-      "Set a custom background in settings.",
+      // "Set a custom background in settings.",
       "Tab Cloaking is highly recommended",
       "About:Blank Cloak is highly recommended",
-      "The #1 site unblocker, with 90K users daily",
-      "The #1 site unblocker, with 90K users daily",
-      "Finally, an actual site unblocker that works fast!",
+      "The #1 Games Site, with 10K users daily",
+      // "The #1 site unblocker, with 90K users daily",
+      // "Finally, an actual site unblocker that works fast!",
       "Do not share this link with anyone.",
-      "Join our community at discord.gg/unblocking",
-      "Join our community at discord.gg/unblocking",
-      "© Copyright 2024 Doge Network. All Rights Reserved.",
-      "Customize Doge by going to Settings > Themes",
+      "Join our Discord at discord.hypackel.com",
+      "Join our community at discord.hypackel.com",
+      "© Copyright 2024 Hypackel Games. All Rights Reserved.",
+      "Customize Indium by going to Settings > Themes",
       "Want more links? Our Discord provides tons of links!",
       "Want more links? Our Discord provides tons of links!",
       "Want more links? Our Discord provides tons of links!",
