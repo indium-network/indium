@@ -17,7 +17,6 @@
     left: 0;
     right: 0;
 }
-
 #urlBar input {
     flex-direction: row;
     display: flex;
