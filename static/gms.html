@@ -179,16 +179,12 @@ function openAg(url, ag) {
 
 
 
-    // Fetch game data from the separate JSON file
-    fetch("/assets/json/games.json")
+  // Fetch game data from the separate JSON file
+  fetch("/assets/json/games.json")
     .then(response => response.json())
     .then(data => {
         const gameList = document.getElementById("app-list");
         const searchInput = document.getElementById("searchInput");
-        const loadMoreButton = document.getElementById("loadMoreButton");
-        
-        // Initialize counter to keep track of the number of games displayed
-        let gamesDisplayed = 0;
 
         // Function to filter games based on search query
         const filterGames = () => {
@@ -205,62 +201,51 @@ function openAg(url, ag) {
             // Clear existing game list
             gameList.innerHTML = "";
 
-            // Display games based on the current counter value
-            for (let i = 0; i < gamesDisplayed; i++) {
-                if (nonBrokenGames[i]) {
-                    displayGame(nonBrokenGames[i]);
-                }
-                if (brokenGames[i]) {
-                    displayGame(brokenGames[i]);
-                }
-            }
+            
 
-            // Toggle the visibility of the "Load More" button
-            if (gamesDisplayed < nonBrokenGames.length + brokenGames.length) {
-                loadMoreButton.style.display = "block";
-            } else {
-                loadMoreButton.style.display = "none";
-            }
+            // Display non-broken games
+            nonBrokenGames.forEach(game => {
+                displayGame(game);
+            });
+            // Display broken games
+            brokenGames.forEach(game => {
+                displayGame(game);
+            });
         };
 
         // Function to display a game card
         const displayGame = (game) => {
-            const isBroken = game.broken === true;
-            const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
+          const isBroken = game.broken === true;
+                const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
             const gameCard = document.createElement("div");
             gameCard.innerHTML = `
                 <div data-url="${game.url}" data-name="${game.name}" class="app-card">
                     <img class="app-image" src="${game.imageSrc}" alt="">
                     <br>
                     <h1 style="color: ${titleColor};" class="title">${game.name}</h1>
-                    <button class="btn btn-success" id="launchapp">Launch</button>
+                    <button class="btn btn-success" id="launchgame">Launch</button>
                 </div>
             `;
+            // if (game.broken == true) {
+            //       document.getElementById('title').style.color = 'red';
+            //     }
             gameList.appendChild(gameCard);
         };
 
-        // Call filterGames() initially to load the games
+        // Initial display of all games
         filterGames();
-
-        // Event listener for the "Load More" button click
-        loadMoreButton.addEventListener("click", () => {
-            gamesDisplayed += 5; // Increase the counter by 5
-            filterGames(); // Redisplay the games
-        });
 
         // Event listener for search input
         searchInput.addEventListener("input", filterGames);
     })
     .catch(error => console.error("Error loading JSON:", error));
 
-    // Call filterGames() initially to load the games
-    filterGames();
    
 
 
     // Event listener for the "Launch" button click
     document.addEventListener("click", function(event) {
-        if (event.target && event.target.id === "launchapp") {
+        if (event.target && event.target.id === "launchgame") {
             // Find the parent node (game card) of the clicked button
             const gameCard = event.target.closest(".app-card");
 

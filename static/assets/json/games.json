@@ -1,7 +1,7 @@
 [
     {
       "url": "https://d3rtzzzsiu7gdr.cloudfront.net/files/tag/index.html",
-      "imageSrc": "./tag/tag.jpg",
+      "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/files/tag/tag.jpg",
       "name": "Tag",
       "tags": "2 Player, tag"
     },

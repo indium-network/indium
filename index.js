@@ -96,6 +96,7 @@ server.on("listening", async () => {
       startServer();
     } else {
       console.log('\x1b[32m[Indium] Your up to date!\x1b[0m');
+      console.log('\x1b[32m_____________________________\x1b[0m');
       startServer();
     }
   } catch (error) {
@@ -115,6 +116,7 @@ function startServer() {
   } else {
     console.log(`\thttp://${ipAddress}:${address.port}`);
   }
+  console.log('\x1b[32m_____________________________\x1b[0m');
 }
 
 server.listen({

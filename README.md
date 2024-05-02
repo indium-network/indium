@@ -1,5 +1,5 @@
 # Indium
-Doge Unblocker is a lightning-fast web proxy designed for performance and stealth. We are **by far** the best proxy, offering speeds and features unbeatable by any other proxies.
+Indium is a lightning-fast web proxy designed for performance and stealth. We are **by far** the best proxy, offering speeds and features unbeatable by any other proxies.
 ## Key Features:
 - Advanced Tab Cloaking
 - Advanced About:Blank Cloaking
