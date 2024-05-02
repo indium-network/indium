@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/css/exclamation.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrUkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.onload = function () {
+            let encodedAg = localStorage.getItem("agUrl");
+        encodedAg = "/service/" + encodedAg;
+        document.querySelector("#siteurl").src = encodedAg;
+            // URL Cloaking
+            function rndNum() {
+                return Math.floor(Math.random() * 900) + 100;
+            }
+            function rndAbcString(length) {
+                const characters = "abcdefghijklmnopqrstuvw0123456789012345";
+                let result = "";
+                for (let i = 0; i < length; i++) {
+                    result += characters.charAt(Math.floor(Math.random() * characters.length));
+                }
+                return result;
+            }
+            var randomThreeDigitNumber = rndNum();
+            var randomAlphanumericString = rndAbcString(5);
+            var url = "/@?auth=" + randomAlphanumericString;
+            var title = "Google Docs";
+
+            history.pushState({}, title, url);
+        };
+    </script>
+    <title>Home | Indium</title>
+</head>
+<body>
+<div style="" id="urlBar">
+  <input type="text" id="urlInput" placeholder="Search Google or type a URL" />
+  <i class="bi bi-search search"></i>
+  <button class="bi bi-arrows-fullscreen fs" onclick="toggleFs()" title="Fullscreen"></button>
+  <button class="bi bi-box-arrow-up-right ab" onclick="openWindow()" title="Open in About:Blank"></button>
+  <button class="bi bi-arrow-90deg-up arrow" onclick="hideBar()" title="Hide Bar"></button>
+  <button class="bi bi-arrow-clockwise reload" onclick="reload()" title="Reload"></button>
+  <button class="fa-duotone fa-forward-step forward" onclick="forward()" title="Forward"></button>
+  <button class="fa-duotone fa-backward-step back" onclick="back()" title="Back"></button>
+  <button class="fa-regular fa-person-walking-arrow-right exit" onclick="exit()" title="Return Home"></button>
+  <button class="bi bi-code-slash devTools" onclick="devTools()" title="Inspect Element"></button>
+</div>
+ <iframe src="loading.html" id="siteurl"></iframe>
+ 
+ <script src="/uv/uv.bundle.js"></script>
+ <script src="/assets/js/main.js"></script>
+ <script src="/assets/js/loader.js"></script>
+</body>
+</html>
