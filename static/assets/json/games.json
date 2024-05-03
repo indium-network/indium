@@ -15,5 +15,46 @@
         "url": "https://hypackel.github.io/4thandgoal/index.html",
         "imageSrc": "https://hypackel.github.io/4thandgoal/4th-and-goal-2022.avif",
         "name": "4th and goal 2022"
+      },
+      {
+        "name": "10 Minutes Till Dawn",
+        "imageSrc": "https://hypackel.github.io/10minstilldawn/file/media.png",
+        "url": "https://hypackel.github.io/10minstilldawn/file/index.html"
+      },
+
+      {
+        "url": "https://hypackel.github.io/2048/index.html",
+        "imageSrc": "https://hypackel.github.io/2048/2048.png",
+        "name": "2048",
+        "tags": "kids, html5"
+      },
+      {
+        "url": "https://hypackel.github.io/2048-multitask/game/index.html",
+        "imageSrc": "https://hypackel.github.io/2048-multitask/game/splash.png",
+        "name": "2048 Multitask",
+        "tags": "kids, html5"
+      },
+      {
+        "url": "https://hypackel.github.io/adarkroom/game/",
+        "imageSrc": "https://hypackel.github.io/adarkroom/game/splash.png",
+        "name": "A Dark Room"
+      },
+      {
+        "url": "https://hypackel.github.io/adcap/game.html",
+        "imageSrc": "https://hypackel.github.io/adcap-old/upscaled.jpg",
+        "name": "AdVenture Capitalist",
+        "tags": "kids, unity"
+      },
+      {
+        "url": "https://hypackel.github.io/admin/fix/index.html",
+        "imageSrc": "https://hypackel.github.io/admin/unamed.png",
+        "name": "admin"
+      },
+      {
+        "url": "https://hypackel.github.io/adofai/index.html",
+        "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/adofai.jpeg",
+        "name": "A Dance of Fire and Ice",
+        "tags": "stick, shooting"
       }
+      
 ]

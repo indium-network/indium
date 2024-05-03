@@ -19,3 +19,11 @@ Indium is a lightning-fast web proxy designed for performance and stealth. We ar
 ## Deployment
 ### Discord
 [![Join us on Discord](https://invidget.switchblade.xyz/psb56qDDs7?theme=dark)](https://discord.gg/psb56qDDs7)
+
+# TODO
+
+- [ ] Make Right Click menu on all pages
+- [ ] make right click menu work
+- [ ] Fix Search on games page
+- [ ] Add Themes
+- [ ] Finish fragmenting the games
