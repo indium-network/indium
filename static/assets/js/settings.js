@@ -335,3 +335,58 @@ function turnoffblank(){
     localStorage.setItem('autoblank', false);
     window.location.reload();
 }
+
+
+
+function handleKeyPresskey(event) {
+    var selector = document.getElementById("panic-key-input");
+    var ce = document.getElementById("panic-key-input").value;
+    if (ce.length > 0) {
+        // alert('long')
+        selector.value = selector.value.slice(0, -1); // Remove the last character
+    }
+    if (event.key === "Enter") {
+        document.getElementById("save-button").click();
+    }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebarItems = document.querySelectorAll(".sidebar-item");
+    const menuContents = document.querySelectorAll(".menu-content");
+
+    sidebarItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = this.querySelector('.sidebar-link').getAttribute("data-target");
+            menuContents.forEach(content => {
+                content.classList.remove("active");
+            });
+            const content = document.getElementById(target);
+            if (content) {
+                content.classList.add("active");
+            }
+            // Remove active class from all sidebar items
+            sidebarItems.forEach(item => {
+                item.classList.remove("active");
+            });
+            // Add active class to clicked sidebar item
+            this.classList.add("active");
+        });
+    });
+});
+
+
+window.addEventListener("load", function () {
+    // loadScript("/worker.js");
+    if (window.innerWidth < 676) {
+        location.href = "/mobile-lock";
+    }
+    if (window.location.pathname === '/loading.html') {
+        if (window.innerWidth < 676) {
+            var rm = document.querySelector('.themesExcluded');
+            rm.style.display = 'none';
+        }
+    }
+});

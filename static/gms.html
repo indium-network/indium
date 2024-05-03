@@ -3,9 +3,10 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/apps.css">
+    <link rel="stylesheet" href="/assets/css/gms.css">
     <link rel="shortcut icon" href="app.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,87 +60,6 @@
       </nav>
     </header>
 
-<style>
-  .searchforapps{
-    border: 0;
-    outline: 0;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.3);
-padding: 15px 30px 15px 30px;
-    background-color: rgba(0,0,0,0.4);
-    justify-content: center;
-    display: flex;
-    text-align: center;
-  }
-  .app-card{
-    
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.3);
-    width: 300px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
-    transition: 0.7s;
-  }
-  .app-list{
-    display: flex;
-    color: #fff;
-    flex-wrap: wrap;
-    gap: 30px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .description {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-  .app-image{
-    background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-    object-fit: cover;
-    /* aspect-ratio: inherit; */
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    transition: 0.7s !important;
-    text-align: center;
-    height: 150px;
-    /* transition: ease-in-out; */
-    width: 270px;
-    border-radius: 15px !important;
-  }
-
-  .app-image:hover{
-    border-radius: 5px !important;
-    /* transition: ease-in-out; */
-  }
-
-
-  .app-card:hover {
-    background-size: 400% 400%;
-  background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
-  animation: gradient 5s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-</style>
 
 <main style="width: 100vw;">
     <br><br><br><br><br><br><br><br><br><br>
@@ -152,197 +72,11 @@ padding: 15px 30px 15px 30px;
   
     <div id="app-list" class="app-list">
   </div>
+  <h1>e</h1>
   <center>
-  <button class="btn btn-danger" id="loadMoreButton">Skibidi</button>
+  <button class="btn btn-danger text-center" id="loadMoreButton">Load More</button>
 </center>
-    <script>
-      function encode(str) {
-    if (!str) return str;
-    return encodeURIComponent(
-        str
-            .toString()
-            .split('')
-            .map((char, ind) =>
-                ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
-            )
-            .join('')
-    );
-}
-
-function openAg(url, ag) {
-  localStorage.setItem("currentAg", ag)
-  
-  agU = encode(url);
-  localStorage.setItem('agUrl', agU);
-  location.href = '/@';
-}
-
-
-
-
-
-    // Fetch game data from the separate JSON file
-    fetch("/assets/json/games.json")
-    .then(response => response.json())
-    .then(data => {
-        const gameList = document.getElementById("app-list");
-        const searchInput = document.getElementById("searchInput");
-        const loadMoreButton = document.getElementById("loadMoreButton");
-        
-        // Initialize counter to keep track of the number of games displayed
-        let gamesDisplayed = 0;
-
-        // Function to filter games based on search query
-        const filterGames = () => {
-            const searchTerm = searchInput.value.toLowerCase();
-
-            // Filter broken games and non-broken games
-            const brokenGames = data.filter(game =>
-                game.name.toLowerCase().includes(searchTerm) && game.broken
-            );
-            const nonBrokenGames = data.filter(game =>
-                game.name.toLowerCase().includes(searchTerm) && !game.broken
-            );
-
-            // Clear existing game list
-            gameList.innerHTML = "";
-
-            // Display games based on the current counter value
-            for (let i = 0; i < gamesDisplayed; i++) {
-                if (nonBrokenGames[i]) {
-                    displayGame(nonBrokenGames[i]);
-                }
-                if (brokenGames[i]) {
-                    displayGame(brokenGames[i]);
-                }
-            }
-
-            // Toggle the visibility of the "Load More" button
-            if (gamesDisplayed < nonBrokenGames.length + brokenGames.length) {
-                loadMoreButton.style.display = "block";
-            } else {
-                loadMoreButton.style.display = "none";
-            }
-        };
-
-        // Function to display a game card
-        const displayGame = (game) => {
-            const isBroken = game.broken === true;
-            const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
-            const gameCard = document.createElement("div");
-            gameCard.innerHTML = `
-                <div data-url="${game.url}" data-name="${game.name}" class="app-card">
-                    <img class="app-image" src="${game.imageSrc}" alt="">
-                    <br>
-                    <h1 style="color: ${titleColor};" class="title">${game.name}</h1>
-                    <button class="btn btn-success" id="launchgame">Launch</button>
-                </div>
-            `;
-            // document.getElementById('launchgame').onclick = function() {openawe()};
-            gameList.appendChild(gameCard);
-        };
-
-        // Call filterGames() initially to load the games
-        filterGames();
-
-        // Event listener for the "Load More" button click
-        loadMoreButton.addEventListener("click", () => {
-            gamesDisplayed += 5; // Increase the counter by 5
-            filterGames(); // Redisplay the games
-        });
-
-        // Event listener for search input
-        searchInput.addEventListener("input", filterGames);
-    })
-    .catch(error => console.error("Error loading JSON:", error));
-
-    // Call filterGames() initially to load the games
-    filterGames();
-   
-function openawe(){
-   // Find the parent node (game card) of the clicked button
-   const gameCard = event.target.closest(".app-card");
-
-// Extract URL and name from the game card
-const gameUrl = gameCard.getAttribute("data-url");
-const gameName = gameCard.getAttribute("data-name");
-
-// Call the openAg function with the extracted URL and name
-openAg(gameUrl, gameName);
-}
-
-document.addEventListener('#launchgame', openawe())
-
-    // // Event listener for the "Launch" button click
-    // document.addEventListener("click", function(event) {
-    //     if (event.target && event.target.id === "launchgame") {
-    //         // Find the parent node (game card) of the clicked button
-    //         const gameCard = event.target.closest(".app-card");
-
-    //         // Extract URL and name from the game card
-    //         const gameUrl = gameCard.getAttribute("data-url");
-    //         const gameName = gameCard.getAttribute("data-name");
-
-    //         // Call the openAg function with the extracted URL and name
-    //         openAg(gameUrl, gameName);
-    //     }
-    // });
-    </script>
-    <!-- <div class="bottomfooter">
-        <div class="leftside">
-            <a id="roundiconbuttonn" class="roundiconbuttonn" href="https://discord.gg/sWPHCdxCPU"><i onclick="window.location.href= 'DISCORD URL'" class="fa-brands fa-discord"></i></a>
-        </div>
-        <div class="centerside">
-            <p class="icnbatnalt" id="realtime">03:14:26</p>
-        </div>
-        <div class="rightside">
-            <a class="legalbutton" href="#">Privacy Policy</a>&ThickSpace;|&ThickSpace;
-            <a href="eua" class="legalbutton">EULA</a>
-        </div>
-    </div> -->
 </main>
-<style type="text/css"> 
-  .context-menu {
-    transition: 0.7s; 
-    border-radius: 10px;
-    position: absolute; 
-    text-align: center; 
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
-    backdrop-filter: saturate(180%) blur(10px);
-  } 
-
-  .context-menu ul { 
-    padding: 0px; 
-    margin: 0px; 
-    min-width: 150px; 
-    list-style: none; 
-  } 
-
-  .context-menu ul li { 
-    padding-bottom: 7px; 
-    padding-top: 7px; 
-  } 
-
-  .context-menu ul li a { 
-    transition: 0.2s;
-    text-decoration: none; 
-    color: #fff; 
-  } 
-  .context-menu ul li a:hover{
-    color: rgba(255, 255, 255, 0.659);
-  }
-
-  .context-menu ul li {
-    transition: 0.7s;
-  }
-  
-  .context-menu ul li:hover { 
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
-  } 
-</style> 
 
 <div id="contextMenu" class="context-menu" style="display:none"> 
   <ul> 
@@ -359,31 +93,11 @@ document.addEventListener('#launchgame', openawe())
   </ul> 
 </div> 
 
-<script>
-  document.onclick = hideMenu; 
-  document.oncontextmenu = rightClick; 
-
-  function hideMenu() { 
-    document.getElementById("contextMenu").style.display = "none";
-  } 
-
-  function rightClick(e) { 
-    e.preventDefault(); 
-
-    if (document.getElementById("contextMenu").style.display == "block") {
-      hideMenu();
-    } else { 
-      var menu = document.getElementById("contextMenu"); 
-      menu.style.display = 'block'; 
-      menu.style.left = e.pageX + "px"; 
-      menu.style.top = e.pageY + "px"; 
-    } 
-  } 
-</script>
 
 
 <script src="/assets/js/script.js"></script>
 <script rel="preload" src="/assets/js/main.js"></script>
+<script src="/assets/js/gms.js"></script>
   <script src="/assets/js/index.js"></script>
 <!-- <script src="/assets/js/snow.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -41,13 +41,13 @@ loadCSS('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icon
 
 
 // ! BREAKS EVERYTHING 
-// loadCSS('https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css', function() {
+// loadCSS('https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css', function() {
 //   script('[✔️] Font Awesome Pro');
 // });
 
-loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css', function() {
-  script('Font Awesome Free CDN Loaded');
-});
+// loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css', function() {
+//   script('Font Awesome Free CDN Loaded');
+// });
 
 
 if (window.location.pathname === "/index.html" || window.location.pathname === "/") {

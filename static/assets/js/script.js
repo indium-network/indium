@@ -22,7 +22,7 @@ if (localStorage.getItem('snow') === 'true') {
 // __________________________
 window.addEventListener("load", function () {
     loadScript("/worker.js");
-    if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+    if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/=") {
       if (window.innerWidth < 676) {
         location.href = "/mobile-lock";
       }
@@ -76,100 +76,112 @@ if (gaenabled == "false") {
 
 document.addEventListener("DOMContentLoaded", (event) => {
   setIcon();
+  createTabCloakButtons();
 });
 
+function createTabCloakButtons() {
+  const tabCloakOptions = [
+    { name: "Default", icon: "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/appbig.png" },
+    { name: "Schoology", icon: "https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico" },
+    { name: "Google Docs", icon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" },
+    { name: "Google Sheets", icon: "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico" },
+    { name: "Google Slides", icon: "https://ssl.gstatic.com/docs/presentations/images/favicon5.ico" },
+    { name: "Google Sites", icon: "https://ssl.gstatic.com/atari/images/public/favicon.ico" },
+    { name: "Google Forms", icon: "https://ssl.gstatic.com/docs/spreadsheets/forms/favicon_qp2.png" },
+    { name: "Desmos", icon: "https://www.desmos.com/assets/img/apps/scientific/favicon.ico" },
+    { name: "Desmos graphing", icon: "https://www.desmos.com/assets/img/apps/graphing/favicon.ico" },
+    { name: "Google Drive", icon: "https://ssl.gstatic.com/images/branding/product/2x/drive_2020q4_32dp.png" },
+    { name: "Google classroom", icon: "https://ssl.gstatic.com/classroom/favicon.png" },
+    { name: "NoRedInk", icon: "https://wp.noredink.com/wp-content/uploads/2024/01/favicon.ico" },
+    { name: "Lexia Core5", icon: "https://www.lexiacore5.com/icons/icon.svg" },
+    { name: "Lexia PowerUp", icon: "https://www.lexiapowerup.com/favicon.svg" },
+    { name: "Mathspace", icon: "https://mathspace.co/website/favicons/favicon-32x32.png" },
+    { name: "Kahoot", icon: "https://assets-cdn.kahoot.it/controller/v2/favicon.ico" },
+    { name: "Oncourse Connect", icon: "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/onc.ico" } // Assuming this is a local path
+];
 
-if (document.getElementById("tabCloak")){
-document.getElementById("tabCloak").addEventListener("change", function (event) {
-  localStorage.setItem('tabCloak', event.target.value);
-  console.log(localStorage.getItem("tabCloak"))
-  setIcon();
-})}
+
+const tabCloakButtonsContainer = document.getElementById("tabCloakButtons");
+
+    tabCloakOptions.forEach(option => {
+        const button = document.createElement("button");
+
+        const icon = document.createElement("img");
+        icon.src = option.icon;
+        icon.alt = option.name;
+        icon.style.width = "20px";
+        icon.style.height = "20px";
+        icon.style.marginRight = "5px";
+
+        button.classList.add("tabCloakiconButtons");  
+        button.appendChild(icon); // Append icon before text
+        button.appendChild(document.createTextNode(option.name)); // Append button text
+
+        button.addEventListener("click", function() {
+            localStorage.setItem('tabCloak', option.name);
+            setIcon();
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll(".tabCloakiconButtons");
+            buttons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            // Add active class to the clicked button
+            this.classList.add("active");
+        });
+
+        // Check if the button corresponds to the selected tab cloak option and add the active class
+        if (localStorage.getItem('tabCloak') === option.name) {
+            button.classList.add("active");
+        }
+
+        tabCloakButtonsContainer.appendChild(button);
+    });
+}
 
 function setIcon() {
-  if (localStorage.getItem("tabCloak") === null) {
-      localStorage.setItem("tabCloak", "Default")
-  }
-  var icon = localStorage.getItem('tabCloak');
-  if (document.getElementById("tabCloak")) {
-  document.getElementById("tabCloak").value = icon;
-  }
-  var link = window.document.querySelector("link[rel~='icon']");
-  if (!link) {
-      link = window.document.createElement('link');
-      link.rel = 'icon';
-      window.document.getElementsByTagName('head')[0].appendChild(link);
-  }
-  if (icon == "Default") {
-      link.href = 'https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/appbig.png';
-      document.title = "Home | Indium"
-  }
-  if (icon == "Schoology") {
-      link.href = 'https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico';
-      document.title = "Home | Schoology"
-  }
-  if (icon == "Google Docs") {
-      link.href = 'https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico';
-      document.title = "Google Docs"
-  }
-  if (icon == "Google Sheets") {
-      link.href = 'https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico';
-      document.title = "Google Sheets"
-  }
-  if (icon == "Google Slides") {
-      link.href = 'https://ssl.gstatic.com/docs/presentations/images/favicon5.ico';
-      document.title = "Google Slides"
-  }
-  if (icon == "Google Sites") {
-      link.href = 'https://ssl.gstatic.com/atari/images/public/favicon.ico';
-      document.title = "Google Sites"
-  }
-  if (icon == "Google Forms") {
-      link.href = 'https://ssl.gstatic.com/docs/spreadsheets/forms/favicon_qp2.png';
-      document.title = "Google Forms"
-  }
-  if (icon == "Desmos") {
-      link.href = 'https://www.desmos.com/assets/img/apps/scientific/favicon.ico';
-      document.title = "Desmos | Scientific Calculator"
-  }
-  if (icon == "Desmos graphing") {
-      link.href = 'https://www.desmos.com/assets/img/apps/graphing/favicon.ico';
-      document.title = "Desmos | Graphing Calculator"
-  }
-  if (icon == "Google Drive") {
-      link.href = 'https://ssl.gstatic.com/images/branding/product/2x/drive_2020q4_32dp.png';
-      document.title = "My Drive - Google Drive"
-  }
-  if (icon == "Google classroom") {
-      link.href = 'https://ssl.gstatic.com/classroom/favicon.png';
-      document.title = "Classes"
-  }
-  if (icon == "NoRedInk") {
-      link.href = 'https://www.noredink.com/favicon.png';
-      document.title = "Student Home | NoRedInk"
-  }
-  if (icon == "Lexia Core5") {
-      link.href = 'https://www.lexiacore5.com/icons/icon.svg';
-      document.title = "Lexia Core5"
-  }
-  if (icon == "Lexia PowerUp") {
-      link.href = 'https://www.lexiapowerup.com/favicon.png';
-      document.title = "Lexia PowerUp"
-  }
-  if (icon == "Mathspace") {
-      link.href = 'https://mathspace.co/website/favicons/favicon-32x32.png';
-      document.title = "Mathspace"
-  }
-  if (icon == "Kahoot") {
-      link.href = 'https://assets-cdn.kahoot.it/controller/v2/favicon.ico';
-      document.title = "Enter Game PIN - Kahoot!"
-  }
-  if (icon == "Oncourse Connect") {
-      link.href = '/assets/img/onc.ico';
-      document.title = "My Grades - OnCourse Connect"
+  const tabCloakOptions = [
+      { name: "Default", icon: "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/appbig.png", title: "Home | Indium" },
+      { name: "Schoology", icon: "https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico", title: "Home | Schoology" },
+      { name: "Google Docs", icon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico", title: "Google Docs" },
+      { name: "Google Sheets", icon: "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico", title: "Google Sheets" },
+      { name: "Google Slides", icon: "https://ssl.gstatic.com/docs/presentations/images/favicon5.ico", title: "Google Slides" },
+      { name: "Google Sites", icon: "https://ssl.gstatic.com/atari/images/public/favicon.ico", title: "Google Sites" },
+      { name: "Google Forms", icon: "https://ssl.gstatic.com/docs/spreadsheets/forms/favicon_qp2.png", title: "Google Forms" },
+      { name: "Desmos", icon: "https://www.desmos.com/assets/img/apps/scientific/favicon.ico", title: "Desmos | Scientific Calculator" },
+      { name: "Desmos graphing", icon: "https://www.desmos.com/assets/img/apps/graphing/favicon.ico", title: "Desmos | Graphing Calculator" },
+      { name: "Google Drive", icon: "https://ssl.gstatic.com/images/branding/product/2x/drive_2020q4_32dp.png", title: "My Drive - Google Drive" },
+      { name: "Google classroom", icon: "https://ssl.gstatic.com/classroom/favicon.png", title: "Classes" },
+      { name: "NoRedInk", icon: "https://wp.noredink.com/wp-content/uploads/2024/01/favicon.ico", title: "Student Home | NoRedInk" },
+      { name: "Lexia Core5", icon: "https://www.lexiacore5.com/icons/icon.svg", title: "Lexia Core5" },
+      { name: "Lexia PowerUp", icon: "https://www.lexiapowerup.com/favicon.svg", title: "Lexia PowerUp" },
+      { name: "Mathspace", icon: "https://mathspace.co/website/favicons/favicon-32x32.png", title: "Mathspace" },
+      { name: "Kahoot", icon: "https://assets-cdn.kahoot.it/controller/v2/favicon.ico", title: "Enter Game PIN - Kahoot!" },
+      { name: "Oncourse Connect", icon: "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/onc.ico", title: "My Grades - OnCourse Connect" } // Assuming this is a local path
+  ];
+
+  let iconURL = "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/appbig.png"; // Default icon URL
+  let documentTitle = "Home | Indium"; // Default document title
+
+  // Get the selected tab cloak option from localStorage
+  const selectedTabCloak = localStorage.getItem("tabCloak") || "Default";
+
+  // Find the corresponding icon URL and document title from tabCloakOptions
+  const selectedOption = tabCloakOptions.find(option => option.name === selectedTabCloak);
+  if (selectedOption) {
+      iconURL = selectedOption.icon;
+      documentTitle = selectedOption.title;
   }
 
+  // Set the favicon and document title
+  const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+  link.rel = 'icon';
+  link.href = iconURL;
+  document.getElementsByTagName('head')[0].appendChild(link);
+  document.title = documentTitle;
 }
+
 
 
 
@@ -268,6 +280,11 @@ setTimeout(function() {
 // ____________________________
 // Auto Blanker
 // ____________________________
+
+if(localStorage.getItem('autoblank') == null){
+  localStorage.setItem('autoblank', true)
+  window.location.reload()
+}
 
 
 // AB Cloak

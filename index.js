@@ -31,7 +31,7 @@ app.get('/~', (req, res) => {
   res.sendFile(path.join(__dirname, './static/apps.html'));
 });
 app.get('/0', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/loadmore.html'));
+  res.sendFile(path.join(__dirname, './static/gms.html'));
 });
 app.get('/=', (req, res) => {
   res.sendFile(path.join(__dirname, './static/settings.html'));

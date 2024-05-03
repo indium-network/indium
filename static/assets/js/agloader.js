@@ -32,9 +32,10 @@ if (selectedTheme === 'deepsea') {
 } else if (selectedTheme === 'midnight') {
     urlBar.style.background = "rgb(27, 27, 27)";
 } else if (selectedTheme === null) {
-    urlBar.style.background = "rgb(6, 22, 35)";
+    urlBar.style.background = "linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87))";
 } else {
-    urlBar.style.background = "rgb(6, 22, 35)";
+    urlBar.style.background = "linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87))";
+
 }
 
 var devToolsLoaded = false;
