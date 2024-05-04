@@ -64,12 +64,12 @@ if (gaenabled == "false") {
 } else {
   const gascript = document.createElement("script");
   gascript.setAttribute("async", "");
-  gascript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-9N6C11NZ79");
+  gascript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-B9G5BGGE28");
   const inlinegascript = document.createElement("script");
   inlinegascript.innerHTML = ` window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-9N6C11NZ79');`;
+  gtag('config', 'G-B9G5BGGE28');`;
   document.head.append(gascript, inlinegascript);
   script("Injected script 1/3");
 }
@@ -360,3 +360,85 @@ function turnoffblank(){
   localStorage.setItem('autoblank', false);
   window.location.reload();
 }
+
+
+// ____________________________
+// Right Click Menu
+// ____________________________
+
+document.addEventListener('DOMContentLoaded', function() {
+  function injectContextMenu() {
+      // Create the div element
+      var div = document.createElement('div');
+      div.id = 'contextRightClickMenu';
+      div.className = 'context-right-menu';
+      div.style.display = 'none';
+
+      // Create the ul element
+      var ul = document.createElement('ul');
+
+      // Create the li elements and anchor elements
+      var li1 = document.createElement('li');
+      var a1 = document.createElement('a');
+      a1.href = 'javascript:AB()';
+      a1.setAttribute('onclick', 'AB()');
+      a1.textContent = 'About:blank';
+      li1.appendChild(a1);
+
+      var li2 = document.createElement('li');
+      var a2 = document.createElement('a');
+      a2.href = '/~';
+      a2.textContent = 'Apps';
+      li2.appendChild(a2);
+
+      var li3 = document.createElement('li');
+      var a3 = document.createElement('a');
+      a3.href = '/0';
+      a3.textContent = 'Games';
+      li3.appendChild(a3);
+
+      var li4 = document.createElement('li');
+      var a4 = document.createElement('a');
+      a4.href = '/=';
+      a4.textContent = 'Settings';
+      li4.appendChild(a4);
+
+      // Append li elements to ul
+      ul.appendChild(li1);
+      ul.appendChild(li2);
+      ul.appendChild(li3);
+      ul.appendChild(li4);
+
+      // Append ul to div
+      div.appendChild(ul);
+
+      // Append div to body
+      document.body.appendChild(div);
+      script('Right Click Menu Loaded')
+
+      // Add event listeners
+      document.onclick = hideMenu;
+      document.oncontextmenu = rightClick;
+
+      function hideMenu() {
+          document.getElementById("contextRightClickMenu").style.display = "none";
+      }
+
+      function rightClick(e) {
+          e.preventDefault();
+
+          if (document.getElementById("contextRightClickMenu").style.display == "block") {
+              hideMenu();
+          } else {
+              var menu = document.getElementById("contextRightClickMenu");
+              menu.style.display = 'block';
+              menu.style.left = e.pageX + "px";
+              menu.style.top = e.pageY + "px";
+          }
+      }
+  }
+
+  // Call the function to inject the context menu when DOM content is loaded
+  injectContextMenu();
+});
+

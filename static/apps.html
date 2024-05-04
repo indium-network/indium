@@ -319,42 +319,7 @@ function openAg(url, ag) {
   } 
 </style> 
 
-<div id="contextMenu" class="context-menu" style="display:none"> 
-  <ul> 
-    <li><a id="tabcloaksubmenu" href="#">Tab Cloak (Toggle)</a>
-      <ul id="submenu" style="display: none;">
-        <li><a href="#">Enabled</a></li>
-        <li><a href="#">Disabled</a></li>
-      </ul>
-    </li>
-    <li href="javascript:AB()" onclick="AB()"><a href="javascript:AB()" onclick="AB()">About:blank</a></li>
-    <li><a href="/!">Apps</a></li>
-    <li><a href="/0">Games</a></li>
-    <li><a href="/=">Settings</a></li>
-  </ul> 
-</div> 
 
-<script>
-  document.onclick = hideMenu; 
-  document.oncontextmenu = rightClick; 
-
-  function hideMenu() { 
-    document.getElementById("contextMenu").style.display = "none";
-  } 
-
-  function rightClick(e) { 
-    e.preventDefault(); 
-
-    if (document.getElementById("contextMenu").style.display == "block") {
-      hideMenu();
-    } else { 
-      var menu = document.getElementById("contextMenu"); 
-      menu.style.display = 'block'; 
-      menu.style.left = e.pageX + "px"; 
-      menu.style.top = e.pageY + "px"; 
-    } 
-  } 
-</script>
 
 
 <script src="/assets/js/script.js"></script>

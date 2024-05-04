@@ -214,6 +214,7 @@ iframe {
 }
 
 .back {
+    display: table;
     position: absolute;
     top: 50%;
     left: 0.2%;
@@ -231,15 +232,15 @@ iframe {
 }
 
 .back>i{
-    position:relative;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%)
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .back:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: rgba(255, 255, 255, 0.72);
+    /* background-color: rgba(255, 255, 255, 0.297); */
+    /* border: 2px solid rgba(199, 199, 199, 0.039); */
 }
 
 .back:active {

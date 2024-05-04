@@ -1,4 +1,9 @@
 [
+  {
+    "url": "https://forms.gle/SkiGvHrVaYgeruv48",
+    "imageSrc": "/assets/img/foms.png",
+    "name": "Request A Game"
+  },
     {
         "url": "https://hypackel.github.io/1/index.html",
         "imageSrc": "https://hypackel.github.io/1/meta/apple-touch-icon.png",
@@ -55,6 +60,66 @@
         "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/adofai.jpeg",
         "name": "A Dance of Fire and Ice",
         "tags": "stick, shooting"
-      }
-      
+      },
+      {
+        "url": "https://hypackel.github.io/ageofwar/index.html",
+        "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/ageofwar.png",
+        "name": "Age of War",
+        "tags": "stick, shooting"
+      },
+      {
+        "url": "https://hypackel.github.io/ah/index.html",
+        "imageSrc": "https://hypackel.github.io/alienhominid/game/alienhominid.jpg",
+        "name": "Alien Hominid"
+      },
+    {
+      "url": "https://hypackel.github.io/among-us/online/index.html",
+      "imageSrc": "https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec=w240-h480-rw",
+      "name": "Among Us"
+    },
+    {
+      "url": "https://hypackel.github.io/among-us/offline/index.html",
+      "imageSrc": "https://images.squarespace-cdn.com/content/v1/5a4c4ea9bff200d1651f1e04/1616180199194-9898XXJUBE8UTNEVIU3F/among-us-icon.jpeg?format=1000w",
+      "name": "Among Us Offline"
+    },
+    {
+      "url": "https://hypackel.github.io/AngryBirds/index.html",
+      "imageSrc": "https://hypackel.github.io/AngryBirds/game/AngryBirdsFavIcon_512x512.png",
+      "name": "Angry Birds"
+    },
+    {
+      "url": "https://hypackel.github.io/AngryBirdsRadox/index.html",
+      "imageSrc": "https://hypackel.github.io/AngryBirdsRadox/game/splash.png",
+      "name": "Angry Birds Radox",
+      "tags": "html5, kids, action, point-and-click"
+    },
+    {
+      "url": "https://hypackel.github.io/AngryBirdsWebGL/index.html",
+      "imageSrc": "https://static.wikia.nocookie.net/angrybirds/images/b/bd/AB_Reloaded_Icon.png",
+      "name": "Angry Birds (WebGL)",
+      "tags": "unity, kids, point-and-click, action"
+    },
+    {
+      "url": "https://hypackel.github.io/aquapark-slides/index.html",
+      "imageSrc": "https://hypackel.github.io/aquapark-slides/game/splash.png",
+      "name": "Aquapark Slides"
+    },
+    {
+      "url": "https://hypackel.github.io/armed-forces/game.html",
+      "imageSrc": "https://hypackel.github.io/armed-forces/splash.webp",
+      "name": "Armed Forces",
+      "tags": "action, shooting, unity"
+    },
+    {
+      "url": "https://hypackel.github.io/aswc/index.html",
+      "imageSrc": "https://hypackel.github.io/aswc/aswc.jpg",
+      "name": "A Small World Cup",
+      "tags": "action, shooting, tag"
+    },
+    {
+      "url": "https://8ballpoolonline.github.io/file/index.html",
+      "imageSrc": "/assets/gmsimg/8ballpool.png",
+      "name": "8 Ball Pool"
+    }
+    
 ]

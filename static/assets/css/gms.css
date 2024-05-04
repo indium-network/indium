@@ -87,43 +87,13 @@ padding: 15px 30px 15px 30px;
 
 
 
-.context-menu {
-    transition: 0.7s; 
-    border-radius: 10px;
-    position: absolute; 
-    text-align: center; 
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
-    backdrop-filter: saturate(180%) blur(10px);
-  } 
 
-  .context-menu ul { 
-    padding: 0px; 
-    margin: 0px; 
-    min-width: 150px; 
-    list-style: none; 
-  } 
 
-  .context-menu ul li { 
-    padding-bottom: 7px; 
-    padding-top: 7px; 
-  } 
 
-  .context-menu ul li a { 
-    transition: 0.2s;
-    text-decoration: none; 
-    color: #fff; 
-  } 
-  .context-menu ul li a:hover{
-    color: rgba(255, 255, 255, 0.659);
+  .gms-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
-  .context-menu ul li {
-    transition: 0.7s;
-  }
-  
-  .context-menu ul li:hover { 
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
-  } 

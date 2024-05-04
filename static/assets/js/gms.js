@@ -106,7 +106,7 @@ let startIndex = 0;
             <div id="app-card" data-url="${game.url}" data-name="${game.name}" class="app-card">
                 <img class="app-image" src="${game.imageSrc}" alt="">
                 <br>
-                <h1 style="color: ${titleColor};" class="title">${game.name}</h1>
+                <h1 style="color: ${titleColor};" class="title gms-title">${game.name}</h1>
                 <button class="btn btn-success" id="launchgame">Launch</button>
             </div>
         `;
