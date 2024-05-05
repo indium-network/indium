@@ -1,6 +1,6 @@
 {
   "name": "education",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "",
   "type": "module",
   "engines": {
@@ -8,7 +8,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node --no-warnings index.js"
   },
   "keywords": [],
   "author": "",

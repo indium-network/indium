@@ -26,7 +26,7 @@ function rightClick(e) {
 
 
 let startIndex = 0;
-    const cardsPerLoad = 20;
+    const cardsPerLoad = 5;
     let isLoading = false;
 
     function displayCards(data) {
@@ -56,7 +56,7 @@ let startIndex = 0;
     }
 
     // Fetch game data from the separate JSON file
-    fetch("/assets/json/games.json")
+    fetch("/assets/json/gamesd3.json")
         .then(response => response.json())
         .then(data => {
             const searchInput = document.getElementById("searchInput");

@@ -39,6 +39,9 @@ app.get('/=', (req, res) => {
 app.get('/mobile-lock', (req, res) => {
   res.sendFile(path.join(__dirname, './static/mobile.html'));
 });
+app.get('/d3', (req, res) => {
+  res.sendFile(path.join(__dirname, './static/gmsd3.html'));
+});
 
 app.get('/@', (req, res) => {
   res.sendFile(path.join(__dirname, './static/agloader.html'));
@@ -105,19 +108,29 @@ server.on("listening", async () => {
   }
 });
 
-function startServer() { 
+function startServer() {
   const address = server.address();
   const ipAddress = ip.address();
+  const hostName = hostname();
+
   console.log("Indium is running on:");
   console.log(`\thttp://localhost:${address.port}`);
-  console.log(`\thttp://${hostname()}:${address.port}`);
+  
+  if (hostName.includes("codespaces")) {
+    console.log("Please Click make public in the bottom corner \n then click ports and ctrl click the url in ports");
+  } else {
+    console.log(`\thttp://${hostName}:${address.port}`);
+  }
+
   if (address.family === "IPv4") {
     console.log(`\thttp://${ipAddress}:${address.port}`);
   } else {
     console.log(`\thttp://${ipAddress}:${address.port}`);
   }
+  
   console.log('\x1b[32m_____________________________\x1b[0m');
 }
+
 
 server.listen({
   port,
