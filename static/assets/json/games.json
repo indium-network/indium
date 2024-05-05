@@ -11,6 +11,12 @@
         "tags": "kids, html5"
       },
       {
+        "url": "https://edy.es/unity/evp5-demo/index.html",
+        "imageSrc": "https://www.edy.es/dev/wp-content/uploads/2011/09/Offroader-1.jpg",
+        "name": "Edy’s Vehicle Physics Demo"
+      },
+      
+      {
         "url": "https://hypackel.github.io/1v1lol/index.html",
         "imageSrc": "https://hypackel.github.io/1v1lol/1v1lol.jpg",
         "name": "1v1.LOL",
@@ -120,6 +126,87 @@
       "url": "https://8ballpoolonline.github.io/file/index.html",
       "imageSrc": "/assets/gmsimg/8ballpool.png",
       "name": "8 Ball Pool"
-    }
+    },
+    {
+      "url": "https://hypackel.github.io/eaglercraft/game/index.html",
+      "imageSrc": "https://hypackel.github.io/eaglercraft/splash.jpg",
+      "name": "Eaglercraft (MC)",
+      "tags": "html5, kids, action"
+    },
+    {
+      "url": "https://ninja.io/",
+      "imageSrc": "/assets/gmsimg/ninja.avif",
+      "name": "Ninja.io",
+      "broken":true
+    },
+    {
+      "url": "https://poki.com/",
+      "imageSrc": "/assets/gmsimg/pok.png",
+      "name": "Poki.com",
+      "broken":false
+    },
+    {
+      "url": "https://hypackel.github.io/driftboss2/index.html",
+      "imageSrc": "/assets/gmsimg/dift.avif",
+      "name": "Drift Boss",
+      "broken":false
+    },
+    {
+      "url": "https://spendelonmuskmoney.io/game/elon-musk/",
+      "imageSrc": "/assets/gmsimg/elon.png",
+      "name": "Spend Elon Musk's Money",
+      "broken":false
+    },
     
+    
+    {
+      "url": "https://territorial.io/",
+      "imageSrc": "/assets/gmsimg/territ.webp",
+      "name": "Territorial.io",
+      "broken":false
+    },
+    {
+      "url": "https://hole-io.com/",
+      "imageSrc": "/assets/gmsimg/hole.jpg",
+      "name": "Hole.io",
+      "broken":false
+    },
+    
+    {
+      "url": "https://powerline.io/",
+      "imageSrc": "/assets/gmsimg/power.png",
+      "name": "Powerline.io",
+      "broken":true
+    },
+    
+    {
+      "url": "https://websitesball.com/",
+      "imageSrc": "/assets/gmsimg/rob.jpeg",
+      "name": "Roblox [Now.gg]"
+    },
+    {
+      "url": "https://now.gg/apps/aptoide/10002/aptoide.html",
+      "imageSrc": "/assets/gmsimg/fbort.png",
+      "name": "Fortnite [Now.gg]",
+      "broken":true
+    },
+    {
+      "url": "https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a",
+      "imageSrc": "/assets/gmsimg/fbort.png",
+      "name": "Fortnite [Geforce Now]",
+      "broken":false
+    },
+    
+    {
+      "url": "https://play.geforcenow.com/mall/",
+      "imageSrc": "/assets/appsimg/geforce.png",
+      "name": "Geforce Now",
+      "description": "Instantly play the most demanding PC games and seamlessly play across your devices."
+    },
+    {
+      "url": "https://reslauncher4.vercel.app",
+      "imageSrc": "/assets/gmsimg/resent.jpeg",
+      "name": "Resent Client",
+      "broken": true
+    }
 ]

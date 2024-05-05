@@ -1,60 +1,60 @@
-// Function to adjust saturation
-function adjustSaturation(value) {
-    document.body.style.filter =
-        "saturate(" +
-        value +
-        "%) contrast(" +
-        document.getElementById("contrastRange").value +
-        "%)";
-    localStorage.setItem("saturationValue", value);
-}
+// // Function to adjust saturation
+// function adjustSaturation(value) {
+//     document.body.style.filter =
+//         "saturate(" +
+//         value +
+//         "%) contrast(" +
+//         document.getElementById("contrastRange").value +
+//         "%)";
+//     localStorage.setItem("saturationValue", value);
+// }
 
-// Function to reset saturation to default
-function resetSaturation() {
-    adjustSaturation(100);
-}
+// // Function to reset saturation to default
+// function resetSaturation() {
+//     adjustSaturation(100);
+// }
 
-// Function to adjust contrast
-function adjustContrast(value) {
-    document.body.style.filter =
-        "saturate(" +
-        document.getElementById("saturationRange").value +
-        "%) contrast(" +
-        value +
-        "%)";
-    localStorage.setItem("contrastValue", value);
-}
+// // Function to adjust contrast
+// function adjustContrast(value) {
+//     document.body.style.filter =
+//         "saturate(" +
+//         document.getElementById("saturationRange").value +
+//         "%) contrast(" +
+//         value +
+//         "%)";
+//     localStorage.setItem("contrastValue", value);
+// }
 
-// Function to reset contrast to default
-function resetContrast() {
-    document.getElementById("contrastRange").value = 100;
-    adjustContrast(100);
-}
+// // Function to reset contrast to default
+// function resetContrast() {
+//     document.getElementById("contrastRange").value = 100;
+//     adjustContrast(100);
+// }
 
-// Initialize slider values from localStorage
-if (localStorage.getItem("saturationValue")) {
-    document.getElementById("saturationRange").value =
-        localStorage.getItem("saturationValue");
-    adjustSaturation(localStorage.getItem("saturationValue"));
-}
-if (localStorage.getItem("contrastValue")) {
-    document.getElementById("contrastRange").value =
-        localStorage.getItem("contrastValue");
-    adjustContrast(localStorage.getItem("contrastValue"));
-}
+// // Initialize slider values from localStorage
+// if (localStorage.getItem("saturationValue")) {
+//     document.getElementById("saturationRange").value =
+//         localStorage.getItem("saturationValue");
+//     adjustSaturation(localStorage.getItem("saturationValue"));
+// }
+// if (localStorage.getItem("contrastValue")) {
+//     document.getElementById("contrastRange").value =
+//         localStorage.getItem("contrastValue");
+//     adjustContrast(localStorage.getItem("contrastValue"));
+// }
 
-// Event listeners for slider changes
-document
-    .getElementById("saturationRange")
-    .addEventListener("input", function () {
-        adjustSaturation(this.value);
-    });
+// // Event listeners for slider changes
+// document
+//     .getElementById("saturationRange")
+//     .addEventListener("input", function () {
+//         adjustSaturation(this.value);
+//     });
 
-document
-    .getElementById("contrastRange")
-    .addEventListener("input", function () {
-        adjustContrast(this.value);
-    });
+// document
+//     .getElementById("contrastRange")
+//     .addEventListener("input", function () {
+//         adjustContrast(this.value);
+//     });
 
 
 document.getElementById("openmodal").addEventListener("click", function () {

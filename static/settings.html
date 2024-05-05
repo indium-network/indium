@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/assets/css/themes.css">
     <link rel="stylesheet" href="/assets/css/settings.css" />
     <link rel="stylesheet" href="/assets/css/settings2.css" />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -42,13 +43,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">f</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">mobile</a>
+                <a class="nav-link" href="/0">Games</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">users</a>
+                <a class="nav-link" href="/~">Apps</a>
               </li>
             </ul>
           </div>
@@ -62,7 +63,7 @@
       </div>
       <div class="sidebar-item">
         <a href="#" style="margin-left: -5px;" class="sidebar-link" data-target="tab">
-          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="24"><path fill="#fff" d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm360-400h280v-160H520v160Z"></path></svg>Tab Cloak </a>
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="24"><path fill="var(--primary)" d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm360-400h280v-160H520v160Z"></path></svg>Tab Cloak </a>
       </div>
       <div class="sidebar-item">
         <a href="#" class="sidebar-link" data-target="appearance">
@@ -78,15 +79,16 @@
       </div> -->
     </div>
     <div class="menu-content active" id="search">
-      <div class="cards">
+      <div style="width: 80vw;" class="cards">
         <h3>about:blank Preview</h3>
         <p>Open the website in about:blank. Will not show in search history</p>
         <label class="switch">
           <input type="checkbox" id="open_blank" />
           <span class="slider"></span>
         </label>
-        <button class="cards-button" id="blankonbutton" style="outline: 0;border: 0;">Turn On Auto Blank</button>
         <button class="cards-button" id="blankoffbutton" style="outline: 0;border: 0;display: none;">Turn off Auto Blank</button>
+        <button class="cards-button" id="blankonbutton" style="outline: 0;border: 0;">Turn On Auto Blank</button>
+        
       </div>
       <div class="cards">
         <h3>Panic Key</h3>
@@ -121,30 +123,11 @@
         <button class="cards-button" id="particlesonbutton" style="outline: 0;border: 0;">Turn On</button>
         <button class="cards-button" id="particlesoffbutton" style="outline: 0;border: 0;display: none;">Turn off</button>
       </div>
-      <div style="min-height: 20vh;" class="cards">
-        <h3>Contrast</h3>
-        <p>Adjust the contrast of the pages.</p>
-        <br />
-        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; height: auto;" class="slider-container">
-          <div style="max-width: 400px; display: flex; align-items: center;">
-            <!-- <input style="min-width: 20vw; margin: 0 auto;" type="range" min="0" max="200" value="100" class="slider" id="contrastRange" /> -->
-            <input style="width: 250px; margin: 0 auto; cursor: grab;" type="range" min="0" max="200" value="100" class="slidered" id="contrastRange" />
-          </div>
-          <p style="visibility: hidden;">eeaaooo</p>
-          <a class="cards-button" style="text-decoration: none; color: #fff; cursor: pointer;" onclick="resetContrast()">Reset</a>
-        </div>
-      </div>
-      <div style="min-height: 20vh;" class="cards">
-        <h3>Saturation</h3>
-        <p>Adjust the saturation of the pages.</p>
-        <br />
-        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; height: auto;" class="slider-container">
-          <div style="max-width: 400px; display: flex; align-items: center;">
-            <!-- <input style="min-width: 20vw; margin: 0 auto;" type="range" min="0" max="200" value="100" class="slider" id="contrastRange" /> -->
-            <input style="width: 250px; margin: 0 auto; cursor: grab;" type="range" min="0" max="200" value="100" class="slidered" id="saturationRange" />
-          </div>
-          <p style="visibility: hidden;">eeaaooo</p>
-          <a class="cards-button" style="text-decoration: none; color: #fff; cursor: pointer;" onclick="resetSaturation()">Reset</a>
+      <div class="cards">
+        <h3>Themes</h3>
+        <p>Choose from a variety of themes</p>
+        <p style="color: red;">Themes Coming Soon. Join the discord to vote for themes</p>
+        <div id="themeCloakButtons">
         </div>
       </div>
     </div>

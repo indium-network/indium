@@ -108,7 +108,7 @@ background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !im
     left: 250px; /* Adjust according to sidebar width */
     width: calc(100% - 250px); /* Adjust according to sidebar width */
     height: 100%;
-    background-color: rgba(28, 28, 28, 0.6);
+    background-color: rgba(28, 28, 28, 0);
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -126,6 +126,21 @@ background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !im
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+
+.themeCloakiconButtons{
+    outline: 0;
+    border: 0;
+    background-color: transparent !important;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#themeCloakButtons>.active{
+    border-radius: 10px;
+    background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !important;
+}
+
 #tabCloakButtons{
     display: flex;
     flex-direction: row;
@@ -146,4 +161,14 @@ display: none !important;
 }
 .modal-content{
 z-index: 100000;
+}
+
+
+body, p, h1:not(.title), h2, h3, h4, h5, h6, a, button, b, select, textarea, i {
+    color: var(--primary) !important;
+}
+
+
+body {
+    background-color: var(--background) !important;
 }

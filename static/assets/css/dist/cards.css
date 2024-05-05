@@ -42,10 +42,13 @@
   }
   
   .cards-button {
-    background-color: #171717;
+    background-color: rgba(23, 23, 23, 0.3);
     color: white;
     padding: 10px;
     display: inline-block;
     border-radius: 5px;
     font-family: var(--font-family-2);
+  }
+  input{
+    color: #fff !important;
   }

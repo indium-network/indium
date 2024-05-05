@@ -76,7 +76,9 @@ if (gaenabled == "false") {
 
 document.addEventListener("DOMContentLoaded", (event) => {
   setIcon();
+  setTheme();
   createTabCloakButtons();
+  createthemeCloakButtons();
 });
 
 function createTabCloakButtons() {
@@ -140,6 +142,84 @@ const tabCloakButtonsContainer = document.getElementById("tabCloakButtons");
     });
 }
 
+
+
+async function fetchThemes() {
+  try {
+    const response = await fetch('/assets/json/themes.json');
+    const themes = await response.json();
+    return themes;
+  } catch (error) {
+    console.error('Error fetching themes:', error);
+    return [];
+  }
+}
+
+async function createthemeCloakButtons() {
+  const themeCloakOptions = await fetchThemes();
+  const themeButtonsContainer = document.getElementById("themeCloakButtons");
+
+  themeCloakOptions.forEach(option => {
+    const button = document.createElement("button");
+    const circle = document.createElement("span");
+    
+    button.style.padding = "5px 10px";
+    button.style.borderRadius = "20px";
+    button.style.border = "none";
+    button.style.marginRight = "5px";
+    button.style.cursor = "pointer";
+
+    circle.style.display = "inline-block";
+    circle.style.width = "10px";
+    circle.style.height = "10px";
+    circle.style.borderRadius = "50%";
+    circle.style.backgroundColor = option.theme.primary; // Use primary color as circle color
+    circle.style.marginRight = "8px"; // Adjust the spacing between circle and text
+
+    button.appendChild(circle);
+    button.appendChild(document.createTextNode(option.name)); // Append button text
+
+    button.addEventListener("click", function() {
+      localStorage.setItem('theme', option.id); // Store theme id instead of name
+      setTheme();
+
+      // Remove active class from all buttons
+      const buttons = document.querySelectorAll(".themeCloakiconButtons");
+      buttons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      // Add active class to the clicked button
+      this.classList.add("active");
+    });
+    button.id = 'themeCloakButtons';
+    // Check if the button corresponds to the selected tab cloak option and add the active class
+    if (localStorage.getItem('theme') === option.id) { // Compare with theme id
+      button.classList.add("active");
+    }
+    button.classList.add("themeCloakiconButtons"); 
+    themeButtonsContainer.appendChild(button);
+  });
+}
+
+async function setTheme() {
+  // if (localStorage.getItem('theme')){
+  // alert('themes coming soon. join the discord to see what themes get added')
+  // }
+  const themeId = localStorage.getItem('theme') || 'default'; // Retrieve theme id or default to 'default'
+    const themes = await fetchThemes();
+    const selectedTheme = themes.find(theme => theme.id === themeId);
+    if (selectedTheme) {
+      document.body.setAttribute('data-theme', selectedTheme.id.toLowerCase());
+    }
+  }
+
+
+
+
+
+
+
 function setIcon() {
   const tabCloakOptions = [
       { name: "Default", icon: "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/appbig.png", title: "Home | Indium" },
@@ -187,32 +267,32 @@ function setIcon() {
 
 
 
-// Function to apply saturation and contrast values to the page
-function applyFilters() {
-  // Retrieve saturation value from localStorage
-  var saturationValue = localStorage.getItem('saturationValue');
-  // Retrieve contrast value from localStorage
-  var contrastValue = localStorage.getItem('contrastValue');
-  if (saturationValue == null) {
-      localStorage.setItem('saturationValue', 100)
-  }
-  if (contrastValue == null) {
-      localStorage.setItem('contrastValue', 100)
-  }
-  // Check if saturation and contrast values exist in localStorage
-  if (saturationValue !== null && contrastValue !== null) {
-      // Apply saturation and contrast values to the page
-      document.body.style.filter = "saturate(" + saturationValue + "%) contrast(" + contrastValue + "%)";
-  } else if (contrastValue !== null) {
-      document.body.style.filter = "contrast(" + contrastValue + "%)";
-  }
-}
+// // Function to apply saturation and contrast values to the page
+// function applyFilters() {
+//   // Retrieve saturation value from localStorage
+//   var saturationValue = localStorage.getItem('saturationValue');
+//   // Retrieve contrast value from localStorage
+//   var contrastValue = localStorage.getItem('contrastValue');
+//   if (saturationValue == null) {
+//       localStorage.setItem('saturationValue', 100)
+//   }
+//   if (contrastValue == null) {
+//       localStorage.setItem('contrastValue', 100)
+//   }
+//   // Check if saturation and contrast values exist in localStorage
+//   if (saturationValue !== null && contrastValue !== null) {
+//       // Apply saturation and contrast values to the page
+//       document.body.style.filter = "saturate(" + saturationValue + "%) contrast(" + contrastValue + "%)";
+//   } else if (contrastValue !== null) {
+//       document.body.style.filter = "contrast(" + contrastValue + "%)";
+//   }
+// }
 
-// Call applyFilters function to set saturation and contrast
-applyFilters();
+// // Call applyFilters function to set saturation and contrast
+// applyFilters();
 
 
-window.onload = applyFilters();
+// window.onload = applyFilters();
 window.onload = setIcon();
 
 if (localStorage.getItem('website') == null || localStorage.getItem('key') == null) {

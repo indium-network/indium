@@ -1,4 +1,10 @@
 [
+  {
+    "url": "https://forms.gle/SkiGvHrVaYgeruv48",
+    "imageSrc": "/assets/img/foms.png",
+    "name": "Request App",
+    "description": "Request An App to be added to Indium."
+  },
     {
       "url": "https://chat.openai.com",
       "imageSrc": "/assets/appsimg/chatgpt.svg",
@@ -31,12 +37,26 @@
         "description": "An alternative front-end to YouTube",
         "broken": true
       },
+      {
+        "url": "https://gemini.google.com/app",
+        "imageSrc": "/assets/appsimg/gem.png",
+        "name": "Gemini",
+        "description": "Bard is now Gemini. Get help with writing, planning, learning, and more from Google AI.",
+        "broken": false
+      },
       
       {
         "url": "https://github.com/hypackel/indium",
         "imageSrc": "/assets/appsimg/gh.png",
         "name": "Github",
         "description": "GitHub is where people build software. More than 100 million people use GitHub to discover, fork, and contribute to over 420 million projects."
+      },
+      {
+        "url": "https://neal.fun",
+        "imageSrc": "/assets/appsimg/neal.webp",
+        "name": "Neal.fun",
+        "description": "Games, visualizations, interactives and other weird stuff.",
+        "broken": true
       },
       {
         "url": "https://tiktok.com",

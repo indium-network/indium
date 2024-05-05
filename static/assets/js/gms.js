@@ -62,16 +62,20 @@ let startIndex = 0;
             const searchInput = document.getElementById("searchInput");
 
             // Function to filter games based on search query
-            const filterGames = () => {
-                const searchTerm = searchInput.value.toLowerCase();
+const filterGames = () => {
+    const searchTerm = searchInput.value.toLowerCase();
 
-                // Filter games based on search term
-                const filteredGames = data.filter(game =>
-                    game.name.toLowerCase().includes(searchTerm)
-                );
+    // Filter games based on search term
+    const filteredGames = data.filter(game =>
+        game.name.toLowerCase().includes(searchTerm)
+    );
 
-                displayCards(filteredGames);
-            };
+    // Clear the game list before displaying filtered games
+    const gameList = document.getElementById("app-list");
+    gameList.innerHTML = '';
+
+    displayCards(filteredGames);
+};
 
             // Initial display of cards
             filterGames();
@@ -103,11 +107,11 @@ let startIndex = 0;
 
         const gameCard = document.createElement("div");
         gameCard.innerHTML = `
-            <div id="app-card" data-url="${game.url}" data-name="${game.name}" class="app-card">
-                <img class="app-image" src="${game.imageSrc}" alt="">
+            <div  id="launchgame" data-url="${game.url}" data-name="${game.name}" class="app-card">
+                <img class="app-image" id="app-image" src="${game.imageSrc}" alt="">
                 <br>
-                <h1 style="color: ${titleColor};" class="title gms-title">${game.name}</h1>
-                <button class="btn btn-success" id="launchgame">Launch</button>
+                <h1 style="color: ${titleColor};" id="gme-name" class="title gms-title">${game.name}</h1>
+              
             </div>
         `;
         gameList.appendChild(gameCard);
@@ -117,7 +121,7 @@ let startIndex = 0;
     
     // Event listener for the "Launch" button click
     document.addEventListener("click", function (event) {
-        if (event.target && event.target.id === "launchgame") {
+        if (event.target && event.target.id === "launchgame"|| event.target && event.target.id === "app-image" || event.target && event.target.id === "gme-name") {
             // Find the parent node (game card) of the clicked button
             const gameCard = event.target.closest(".app-card");
 

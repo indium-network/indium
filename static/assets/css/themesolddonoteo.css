@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+@font-face {
+    font-family: mine;
+    src: url('/assets/fonts/mincrap.otf');
+}
+body[data-theme="default"] #main-title-home {
+    font-family: mine;
+}
+body[data-theme="default"] .fixed-nav-bar-right>a>i{
+    color: #fff;
+}
+body[data-theme="default"] p, h1,h2,h4,h5,h6,i,a, div{
+    color: white !important;
+}
+body[data-theme="interstellar"] {
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    background-color: transparent !important;;
+    background: url('../img/intersbellar.png') !important;
+    height: 100%;
+    /* top: 0; */
+    /* background-position: -100vh -100vw !important; */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+body[data-theme="interstellar"] #main-title-home{
+    font-family: "Inter", sans-serif !important;
+}
+
+body[data-theme="interstellar"] .menu-content{
+   background-color: transparent;
+}
+
+
+body[data-theme="hub"] #switchableidktheisis{
+    background-color: #FF9100;
+    padding:1px 5px 1px 5px;
+    color: #000;
+    text-shadow: none;
+    border-radius: 10px;
+    /* font-family: "Inter", sans-serif !important; */
+}
+
+body[data-theme="hub"] .fixed-nav-bar-right>a{
+    color: #000 !important;
+    background-color: #FF9100 !important;
+}
+body[data-theme="hub"] p{
+    font-weight: bold !important;
+   color: #FF9100 !important;
+    
+}
+
+body[data-theme="hub"] #sidebar > .sidebar-item.active{
+    font-weight: bold !important;
+    background: #FF9100 !important;
+    background-color: #FF9100 !important;
+    color: #000 !important;
+}
+body[data-theme="hub"] #sidebar > .sidebar-item.active > a{
+    color: #000 !important;
+}
+
+body[data-theme="catppuccin mocha"]{
+    background-color: #1E1E2E !important;
+    background: #1E1E2E  !important;
+}
+body[data-theme="catppuccin mocha"] .fixed-nav-bar-right>a, .fixed-nav-bar-right>a>i{
+    color: #89B4FA ;
+}
+body[data-theme="catppuccin mocha"] #main-title-home{
+    color: #CDD6F4 !important;
+    text-shadow: none !important;
+}
+
+body[data-theme="catppuccin mocha"] .menu-content{
+    background-color: transparent;
+ }
