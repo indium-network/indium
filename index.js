@@ -114,19 +114,23 @@ function startServer() {
   const hostName = hostname();
 
   console.log("Indium is running on:");
-  console.log(`\thttp://localhost:${address.port}`);
-  
   if (hostName.includes("codespaces")) {
-    console.log("Please Click make public in the bottom corner \n then click ports and ctrl click the url in ports");
+    console.log('I see that you are in a codespace. Please follow the instructions below: \n')
+    console.log("1. Click Make Public In the bottom right corner");
+    console.log('2. Click Ports on the top bar')
+    console.log('3. Ctrl click the forwarded address')
+    console.log('4. Enjoy!')
   } else {
+    console.log(`\thttp://localhost:${address.port}`);
     console.log(`\thttp://${hostName}:${address.port}`);
+    if (address.family === "IPv4") {
+      console.log(`\thttp://${ipAddress}:${address.port}`);
+    } else {
+      console.log(`\thttp://${ipAddress}:${address.port}`);
+    }
   }
 
-  if (address.family === "IPv4") {
-    console.log(`\thttp://${ipAddress}:${address.port}`);
-  } else {
-    console.log(`\thttp://${ipAddress}:${address.port}`);
-  }
+ 
   
   console.log('\x1b[32m_____________________________\x1b[0m');
 }
