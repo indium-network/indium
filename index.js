@@ -42,6 +42,9 @@ app.get('/mobile-lock', (req, res) => {
 app.get('/d3', (req, res) => {
   res.sendFile(path.join(__dirname, './static/gmsd3.html'));
 });
+app.get('/privacy', (req, res) => {
+  res.sendFile(path.join(__dirname, './static/privacy.html'));
+});
 
 app.get('/@', (req, res) => {
   res.sendFile(path.join(__dirname, './static/agloader.html'));

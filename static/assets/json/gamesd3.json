@@ -61,7 +61,7 @@
   },
   {
     "url": "https://hypackel.github.io/infinityduel/index.html",
-    "imageSrc": "/assets/img/infinityduel.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/infinityduel.jpeg",
     "name": "Stick War: Infinity Duel",
     "tags": "2 Player, stick, shooting, war"
   },
@@ -73,19 +73,19 @@
   },
   {
     "url": "https://hypackel.github.io/dc3/index.html",
-    "imageSrc": "/assets/img/dc3.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/dc3.jpeg",
     "name": "DC3",
     "tags": "car, shooting, fun"
   },
   {
     "url": "https://hypackel.github.io/boxingrandom/index.html",
-    "imageSrc": "/assets/img/boxingrandom.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/boxingrandom.png",
     "name": "Boxing Random",
     "tags": "2 Player, random, boxing"
   },
   {
     "url": "https://hypackel.github.io/blockpost/index.html",
-    "imageSrc": "/assets/img/blockpost.avif",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/blockpost.avif",
     "name": "Blockpost [Needs Internet]",
     "tags": "blockpost, shooting, block, pixel"
   },
@@ -103,123 +103,105 @@
   },
   {
     "url": "https://hypackel.github.io/stick-duel-battle/index.html",
-    "imageSrc": "/assets/img/stick-duel-battle.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/stick-duel-battle.jpeg",
     "name": "Stick Duel Battle",
     "tags": "2 Player, stick, shooting"
   },
   {
     "url": "https://hypackel.github.io/ageofwar/index.html",
-    "imageSrc": "/assets/img/ageofwar.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/ageofwar.png",
     "name": "Age of War",
     "tags": "stick, shooting"
   },
   {
     "url": "https://hypackel.github.io/adofai/index.html",
-    "imageSrc": "/assets/img/adofai.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/adofai.jpeg",
     "name": "A Dance of Fire and Ice",
     "tags": "stick, shooting"
   },
   {
     "url": "https://hypackel.github.io/littlealchemy/index.html",
-    "imageSrc": "/assets/img/littlealchmy.avif",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/littlealchmy.avif",
     "name": "Little Alchemy 2",
     "tags": "combining, elements, little, alchemy, 2"
   },
   {
     "url": "https://hypackel.github.io/swordsandsould/index.html",
-    "imageSrc": "/assets/img/swordsandstones.avif",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/swordsandstones.avif",
     "name": "Swords & Souls: Neverseen",
     "tags": "stick, shooting"
   },
   {
     "url": "https://hypackel.github.io/1v1lolagain/index.html",
-    "imageSrc": "https://hypackel.github.io/1v1lol-2/2e29xb8j.bmp",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/1v1lol.jpeg",
     "name": "1v1.LOL [Needs Internet]",
     "tags": "action, shooting, unity"
   },
   {
     "url": "https://hypackel.github.io/fireboyandwater/forest.html",
-    "imageSrc": "/assets/img/1.avif",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/1.avif",
     "name": "Fireboy and Watergirl. Forest Temple",
     "tags": "2 player, collaborate, fire, water"
   },
   {
     "url": "https://hypackel.github.io/fireboyandwater/light.html",
-    "imageSrc": "/assets/img/2.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/2.jpeg",
     "name": "Fireboy and Watergirl. Light Temple",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/fireboyandwater/crystal.html",
-    "imageSrc": "/assets/img/4.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/4.jpeg",
     "name": "Fireboy and Watergirl. Crystal Temple",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/fireboyandwater/elements.html",
-    "imageSrc": "/assets/img/fireboyandwater.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/fireboyandwater.png",
     "name": "Fireboy and Watergirl. Elements",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/fireboyandwater/ice.html",
-    "imageSrc": "/assets/img/3.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/3.png",
     "name": "Fireboy and Watergirl. Ice Temple",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/fireboyandwater/fairy.html",
-    "imageSrc": "/assets/img/6.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/6.jpeg",
     "name": "Fireboy and Watergirl. Fairy Temple",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/houseofhazards/index.html",
-    "imageSrc": "/assets/img/houseofhazards.avif",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/houseofhazards.avif",
     "name": "House of Hazards",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/volleyrandom/index.html",
-    "imageSrc": "/assets/img/volleyrandom.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/volleyrandom.jpeg",
     "name": "Volley Random",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/soccerrandom/index.html",
-    "imageSrc": "/assets/img/soccerrandom.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/soccerrandom.png",
     "name": "Soccer Random",
     "tags": "2 Player, action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/dc3/index.html",
-    "imageSrc": "/assets/img/dc3.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/dc3.jpeg",
     "name": "Death Chase 3",
     "tags": "action, shooting, tag"
   },
   {
     "url": "https://hypackel.github.io/mxoffroad/index.html",
-    "imageSrc": "/assets/img/mx.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/mx.jpeg",
     "name": "MX OffRoad Master",
     "tags": "2 Player, biking, riding, car"
-  },
-  {
-    "url": "https://hypackel.github.io/proxies.html?ref=gf",
-    "imageSrc": "/fork/0/assets/img/gf.jpg",
-    "name": "Geforce Now",
-    "tags": "proxy, online, tag"
-  },
-  {
-    "url": "https://hypackel.github.io/proxies.html?ref=xbox",
-    "imageSrc": "/fork/0/a/xbox/p9znlayw.bmp",
-    "name": "Xbox Cloud Gaming",
-    "tags": "proxy, online, tag"
-  },
-  {
-    "url": "https://hypackel.github.io/proxies.html?ref=it",
-    "imageSrc": "/fork/0/assets/img/itch.png",
-    "name": "Itch.io",
-    "tags": "proxy, online, tag"
   },
   {
     "url": "https://hypackel.github.io/youtube/index.html",
@@ -231,12 +213,6 @@
     "url": "https://hypackel.github.io/aswc/index.html",
     "imageSrc": "https://hypackel.github.io/aswc/aswc.jpg",
     "name": "A Small World Cup",
-    "tags": "action, shooting, tag"
-  },
-  {
-    "url": "javascript:alert('Short answer: No. You need proxy.    Complex reason: It`s probable that your school employs network restrictions, effectively thwarting Fortnite server connectivity and installation attempts. Consequently, resorting to the utilization of a cloud-based server (proxy) becomes indispensable for circumventing these barriers and facilitating access to the game.');",
-    "imageSrc": "https://hypackel.github.io/Fortnite/splash.png",
-    "name": "Fortnite [Updated] (No Proxy)",
     "tags": "action, shooting, tag"
   },
   {
@@ -253,31 +229,31 @@
   },
   {
     "url": "https://hypackel.github.io/sf2m/index.html",
-    "imageSrc": "/assets/img/sf2mix.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/sf2mix.png",
     "name": "Street Fighter 2 Mix",
     "tags": "Street, fighter, 2, fanmade, mix"
   },
   {
     "url": "https://hypackel.github.io/sf2m/sf3.html",
-    "imageSrc": "/assets/img/sf3.jpeg",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/sf3.jpeg",
     "name": "Street Fighter 3 Mix",
     "tags": "Street, fighter, 3, fanmade, mix"
   },
   {
     "url": "https://hypackel.github.io/sf2m/sonicc.html",
-    "imageSrc": "/assets/img/sonic.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/sonic.png",
     "name": "Sonic",
     "tags": "sonic"
   },
   {
     "url": "https://hypackel.github.io/bulletforce/index.html",
-    "imageSrc": "/assets/img/bulletfo.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/bulletfo.png",
     "name": "Bullet Force old",
     "tags": "action, shooting, unity"
   },
   {
-    "url": "https://hypackel.github.io/bulletnew/index.html",
-    "imageSrc": "/assets/img/bulletfo.png",
+    "url": "https://hypackel.github.io/bulletnew/game.html",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/bulletfo.png",
     "name": "Bullet Force [UPDATED]",
     "tags": "action, shooting, unity"
   },
@@ -322,13 +298,6 @@
     "imageSrc": "https://static.wikia.nocookie.net/fcoc-vs-battles/images/a/aa/Sonic_transparent.png",
     "name": "Sonic Revert",
     "tags": "kids, fun, unity"
-  },
-  {
-    "url": "https://play.geforcenow.com/index.html",
-    "imageSrc": "https://hypackel.github.io/Fortnite/splash.png",
-    "name": "Fortnite",
-    "tags": "action, shooting",
-    "requiresProxy": true
   },
   {
     "imageSrc": "https://hypackel.github.io/projects/subway-surfers/img/splash.jpg",
@@ -385,7 +354,7 @@
     "name": "World's Hardest Game 3"
   },
   {
-    "url": "https://hypackel.github.io/slope/index.html",
+    "url": "https://hypackel.github.io/slope/game/index.html",
     "imageSrc": "https://hypackel.github.io/slope/game/splash.jpg",
     "name": "Slope"
   },
@@ -1018,7 +987,7 @@
   },
   {
     "url": "https://hypackel.github.io/sm64/index.html",
-    "imageSrc": "sm64/splash.jpeg",
+    "imageSrc": "https://hypackel.github.io/sm64/splash.jpeg",
     "name": "Super Mario 64 (JavaScript)"
   },
   {
@@ -1072,8 +1041,8 @@
     "name": "Original Pacman"
   },
   {
-    "url": "pacman-doodle/index.html",
-    "imageSrc": "pacman-doodle/game/ka9wpqax.bmp",
+    "url": "https://hypackel.github.io/pacman-doodle/index.html",
+    "imageSrc": "https://hypackel.github.io/pacman-doodle/game/ka9wpqax.bmp",
     "name": "Pacman Doodle"
   },
   {
@@ -1093,7 +1062,7 @@
   },
   {
     "url": "https://hypackel.github.io/baldisbasics/index.html",
-    "imageSrc": "/assets/img/baldi.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/baldi.png",
     "name": "Baldi's Basics"
   },
   {
@@ -1133,7 +1102,7 @@
   },
   {
     "url": "/fork/game/index.html?cut-the-rope",
-    "imageSrc": "/assets/img/rope.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/rope.png",
     "name": "Cut the Rope old"
   },
   {
@@ -1210,8 +1179,8 @@
   },
   {
     "url": "https://hypackel.github.io/smashkarts/index.html",
-    "imageSrc": "https://hypackel.github.io/smashkarts/game/images/icon-512.png",
-    "name": "Smash Karts old [broken]"
+    "imageSrc": "https://raw.githubusercontent.com/hypackel/smashkarts/main/game/screenshots/1.jpg",
+    "name": "Smash Karts"
   },
   {
     "url": "https://hypackel.github.io/draw-the-hill/index.html",
@@ -1225,7 +1194,7 @@
   },
   {
     "url": "https://hypackel.github.io/proxies.html?ref=gg",
-    "imageSrc": "/assets/img/now.gg.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/now.gg.png",
     "name": "now.gg"
   },
   {
@@ -1245,29 +1214,13 @@
   },
   {
     "url": "https://hypackel.github.io/proxies.html?ref=scratch",
-    "imageSrc": "/assets/img/scrat.png",
+    "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/scrat.png",
     "name": "Scratch"
   },
   {
     "url": "https://hypackel.github.io/pokemonleafgreen/index.html",
     "imageSrc": "https://hypackel.github.io/pokemonleafgreen/pokemon-leaf-green.jpg",
     "name": "Pokemon - Leaf Green"
-  },
-  {
-    "name": "Stumble Guys",
-    "imageSrc": "https://hypackel.github.io/Stumble Guys/splash.png",
-    "url": "https://hypackel.github.io/Stumble Guys/index.html",
-    "requiresProxy": true
-  },
-  {
-    "name": "Zombs Royale",
-    "imageSrc": "https://hypackel.github.io/zombs-royale/game/zomb.png",
-    "url": "https://hypackel.github.io/zombs-royale/"
-  },
-  {
-    "name": "Zombs Royaleasas",
-    "imageSrc": "https://hypackel.github.io/zombs-royale/game/zomb.png",
-    "url": "https://hypackel.github.io/newzomb/index.html"
   },
   {
     "name": "Getting Over it",
@@ -1306,18 +1259,14 @@
   },
   {
     "name": "Gravity Driver",
-    "imageSrc": "gravitydriver/flash_654393_card.png",
+    "imageSrc": "https://raw.githubusercontent.com/hypackel/gravitydriver/main/flash_654393_card.png",
     "url": "https://hypackel.github.io/gravitydriver/"
   },
   {
-    "name": "Drift Boss [Broken]",
-    "imageSrc": "driftboss/am5tvipl.bmp",
-    "url": "https://hypackel.github.io/driftboss/index.html"
-  },
-  {
+    "url": "https://hypackel.github.io/driftboss2/index.html",
+    "imageSrc": "/assets/gmsimg/dift.avif",
     "name": "Drift Boss",
-    "imageSrc": "driftboss/am5tvipl.bmp",
-    "url": "https://hypackel.github.io/driftboss2/index.html"
+    "broken":false
   },
   {
     "name": "Happy Wheels",
@@ -2348,12 +2297,7 @@
   {
     "name": "Zombs Royale",
     "imageSrc": "https://hypackel.github.io/projects/zombs-royale/zomb.png",
-    "url": "https://hypackel.github.io/projects/zombs-royale/index.html"
-  },
-  {
-    "name": "Movie Web",
-    "imageSrc": "/assets/img/movie.png",
-    "url": "https://hypackel.github.io/movie-web/index.html"
+    "url": "https://zombsroyale.io/"
   },
   {
     "name": "Rocket Pult",

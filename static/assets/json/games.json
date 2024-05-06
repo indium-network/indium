@@ -208,5 +208,38 @@
       "imageSrc": "/assets/gmsimg/resent.jpeg",
       "name": "Resent Client",
       "broken": true
+    },
+    {
+      "url": "https://hypackel.github.io/gladihoppers/game.html",
+      "imageSrc": "https://hypackel.github.io/gladihoppers/thumb.png",
+      "name": "Gladihoppers",
+      "broken": false
+    },
+    {
+      "url": "https://hypackel.github.io/drive-mad/game/index.html",
+      "imageSrc": "https://hypackel.github.io/drive-mad/game/webapp/logo.avif",
+      "name": "Drive Mad"
+    },
+    {
+      "name": "Zombs Royale",
+      "imageSrc": "https://hypackel.github.io/projects/zombs-royale/zomb.png",
+      "url": "https://zombsroyale.io/"
+    },
+    {
+      "url": "https://hypackel.github.io/bulletnew/game.html",
+      "imageSrc": "https://d3rtzzzsiu7gdr.cloudfront.net/assets/img/bulletfo.png",
+      "name": "Bullet Force [UPDATED]",
+      "tags": "action, shooting, unity"
+    },
+    {
+      "imageSrc": "https://hypackel.github.io/projects/subway-surfers/img/splash.jpg",
+      "url": "https://hypackel.github.io/subnew/game.html",
+      "name": "Subway Surfers",
+      "tags": "kids, action, unity"
+    },
+    {
+      "url": "https://hypackel.github.io/slope/game/index.html",
+      "imageSrc": "https://hypackel.github.io/slope/game/splash.jpg",
+      "name": "Slope"
     }
 ]

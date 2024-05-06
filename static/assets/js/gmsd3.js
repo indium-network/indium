@@ -26,7 +26,7 @@ function rightClick(e) {
 
 
 let startIndex = 0;
-    const cardsPerLoad = 5;
+    const cardsPerLoad = 250;
     let isLoading = false;
 
     function displayCards(data) {
