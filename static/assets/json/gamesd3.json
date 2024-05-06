@@ -6,7 +6,14 @@
     "tags": "2 Player, tag"
   },
   {
-    "url": "https://hypackel.github.io/space-hug/index.html",
+    "url": "https://app.humanornot.ai/",
+    "imageSrc": "https://assets-global.website-files.com/63df8c4bf46ebf6e7c963e47/644004aced9bd240a2a17633_open_graph.jpg",
+    "name": "Human Or Not?",
+    "broken":true
+  },
+  
+  {
+    "url": "https://hypackel.github.io/space-hug/game.html",
     "imageSrc": "https://hypackel.github.io/space-hug/splash.jpeg",
     "name": "Space Huggers",
     "tags": "2d, shooting, blocky"
