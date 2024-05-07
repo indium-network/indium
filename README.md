@@ -54,4 +54,9 @@ pnpm i && pnpm start
 - [x] make right click menu work
 - [x] Fix Search on games page
 - [ ] Add Themes
-- [50%] Finish fragmenting the games
+- [ ] Put The Game Images Locally so it wont be blocked
+- [ ] Drop the proxy
+- [ ] Remove the Unnecessary Files
+- [ ] Put Docker Images
+- [ ] Make More Tutorials only on discord
+- [x] Finish fragmenting the games
