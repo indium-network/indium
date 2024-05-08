@@ -7,6 +7,8 @@ import { join } from "node:path";
 import { hostname } from "node:os";
 import { createBareServer } from "@tomphttp/bare-server-node";
 import request from "@cypress/request";
+import basicAuth from 'express-basic-auth';
+import config from "./password.js"
 
 const __dirname = path.resolve();
 const server = http.createServer();
@@ -19,6 +21,11 @@ app.use(
     extended: true,
   })
 );
+
+if (config.challenge) {
+
+  app.use(basicAuth({ users: config.users, challenge: true }))
+}
 
 app.use(express.static(path.join(__dirname, "static")));
 app.get('/app', (req, res) => {
@@ -117,7 +124,12 @@ function startServer() {
   const hostName = hostname();
 
   console.log("Indium is running on:");
+  if (config.challenge){
+    console.log(`\tUsernames: ${Object.keys(config.users)}`)
+    console.log(`\tPasswords: ${Object.values(config.users)}`)
+  }
   if (hostName.includes("codespaces")) {
+   
     console.log('I see that you are in a codespace. Please follow the instructions below: \n')
     console.log("1. Click Make Public In the bottom right corner");
     console.log('2. Click Ports on the top bar')

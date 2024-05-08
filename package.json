@@ -1,6 +1,6 @@
 {
   "name": "education",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "",
   "type": "module",
   "engines": {
@@ -17,6 +17,7 @@
     "@cypress/request": "^3.0.0",
     "@tomphttp/bare-server-node": "^2.0.1",
     "express": "^4.18.2",
+    "express-basic-auth": "^1.2.1",
     "fs": "^0.0.1-security",
     "ip": "^2.0.1",
     "pnpm": "^9.0.6"
