@@ -606,6 +606,40 @@
       "tags": "car, combat, driving, shooting, drive shooting,"
     },
     {
+      "url": "https://w8.snokido.com/games/html5/friday-night-funkin/bside10/index.html",
+      "imageSrc": "/assets/img/fnf-bsides.jpg",
+      "name": "FNF B Sides"
+    },
+    {
+      "url": "https://w8.snokido.com/games/html5/friday-night-funkin/nonsense/index.html",
+      "imageSrc": "https://w8.snokido.com/img/large/fnf-nonsense.jpg?180723",
+      "name": "FNF vs Nonsense"
+    },
+    {
+      "url": "https://w8.snokido.com/games/html5/friday-night-funkin/nonsense/index.html",
+      "imageSrc": "/assets/img/fnf-dside.png",
+      "name": "FNF D-Side"
+    },
+    {
+      "url": "https://w8.snokido.com/games/html5/friday-night-funkin/stickman01/index.html",
+      "imageSrc": "https://w8.snokido.com/img/large/fnf-stickman.jpg",
+      "name": "FNF vs Stickman"
+    },
+    {
+      "url": "https://w8.snokido.com/games/html5/friday-night-funkin/davebambi01/index.html",
+      "imageSrc": "https://w8.snokido.com/img/large/fnf-dave-and-bambi.jpg?221022",
+      "name": "FNF vs Dave and Bambi"
+    },
+    {
+      "url": " https://github.com/obscurerev/FNF-Mods-Web-Install",
+      "imageSrc": "https://i.ytimg.com/vi/dK3Xz3pR9ys/maxresdefault.jpg",
+      "name": "FNF Mods List"
+    },
+   
+
+    
+    {
+      
       "url": "https://hypackel.github.io/fnfvsimposter/index.html",
       "imageSrc": "https://hypackel.github.io/fnfvsimposter/unnamed.jpg",
       "name": "FNF vs Imposter old [Broken]",
