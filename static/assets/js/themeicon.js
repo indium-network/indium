@@ -20,20 +20,20 @@ if (localStorage.getItem('snow') === 'true') {
 // __________________________
 // Remove Mobile Users
 // __________________________
-window.addEventListener("load", function () {
-    loadScript("/worker.js");
-    if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/=") {
-      if (window.innerWidth < 676) {
-        location.href = "/mobile-lock";
-      }
-    }
-    if (window.location.pathname === '/loading.html') {
-      if (window.innerWidth < 676) {
-        var rm = document.querySelector('.themesExcluded');
-        rm.style.display = 'none';
-      }
-    }
-  });
+// window.addEventListener("load", function () {
+//     loadScript("/worker.js");
+//     if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/=") {
+//       if (window.innerWidth < 676) {
+//         location.href = "/mobile-lock";
+//       }
+//     }
+//     if (window.location.pathname === '/loading.html') {
+//       if (window.innerWidth < 676) {
+//         var rm = document.querySelector('.themesExcluded');
+//         rm.style.display = 'none';
+//       }
+//     }
+//   });
 
 
 
@@ -301,17 +301,17 @@ function setIcon() {
 // applyFilters();
 
 
-// window.onload = applyFilters();
-window.onload = setIcon();
+// // window.onload = applyFilters();
+// window.onload = setIcon();
 
-if (localStorage.getItem('website') == null || localStorage.getItem('key') == null) {
-  settodefault();
-}
+// if (localStorage.getItem('website') == null || localStorage.getItem('key') == null) {
+//   settodefault();
+// }
 
-function settodefault(){
-  localStorage.setItem('website','https://classroom.google.com/');
-  localStorage.setItem('key','`');
-}
+// function settodefault(){
+//   localStorage.setItem('website','https://classroom.google.com/');
+//   localStorage.setItem('key','`');
+// }
 
 
 // ====================================
@@ -319,38 +319,7 @@ function settodefault(){
 // ====================================
 
 
-// Retrieve the value from localStorage
-const storedKey = localStorage.getItem('key');
-document.addEventListener('keypress', (event) => {
-  const pressedKey = event.key;
-  if (pressedKey === storedKey) {
-    var gotopage = localStorage.getItem('website');
-    
 
-    // Check if gotopage is not null or empty
-    if (gotopage && gotopage.trim() !== "") {
-      // Check if the URL is missing the protocol
-      if (!gotopage.startsWith("http://") && !gotopage.startsWith("https://")) {
-          // Prepend the protocol (assuming HTTP)
-          gotopage = "http://" + gotopage;
-      }
-
-      try{
-        // Add an entry with a specific URL to the history stack
-        history.pushState(null, null, gotopage);
-
-        // Prevent navigation via the back button
-        window.addEventListener('popstate', function(event) {
-            history.pushState(null, null, gotopage);
-        });
-      } catch{
-      console.warn('Could not disable back button.')
-      // Navigate to the URL
-      window.location.href = gotopage;
-      }
-    }
-  }
-});
 
 
 
@@ -370,164 +339,164 @@ setTimeout(function() {
 // Auto Blanker
 // ____________________________
 
-if(localStorage.getItem('autoblank') == null){
-  localStorage.setItem('autoblank', true)
-  window.location.reload()
-}
+// if(localStorage.getItem('autoblank') == null){
+//   localStorage.setItem('autoblank', true)
+//   window.location.reload()
+// }
 
 
-// AB Cloak
-function AB() {
-  let inFrame
+// // AB Cloak
+// function AB() {
+//   let inFrame
 
-  try {
-    inFrame = window !== top
-  } catch (e) {
-    inFrame = true
-  }
+//   try {
+//     inFrame = window !== top
+//   } catch (e) {
+//     inFrame = true
+//   }
 
-  if (!inFrame && !navigator.userAgent.includes("Firefox")) {
-    const popup = open("about:blank", "_blank")
-    if (!popup || popup.closed) {
-      alert("Please allow popups and redirects.")
-    } else {
-      const doc = popup.document
-      const iframe = doc.createElement("iframe")
-      const style = iframe.style
-      const link = doc.createElement("link")
+//   if (!inFrame && !navigator.userAgent.includes("Firefox")) {
+//     const popup = open("about:blank", "_blank")
+//     if (!popup || popup.closed) {
+//       alert("Please allow popups and redirects.")
+//     } else {
+//       const doc = popup.document
+//       const iframe = doc.createElement("iframe")
+//       const style = iframe.style
+//       const link = doc.createElement("link")
 
 
-      const name = document.title; // Grab title from current page
-      const icon = document.querySelector("link[rel*='icon']") ? document.querySelector("link[rel*='icon']").href : "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"; // Grab favicon from current page, fallback if not found
-      // const name = localStorage.getItem("name") || "My Drive - Google Drive"
-      // const icon = localStorage.getItem("icon") || "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+//       const name = document.title; // Grab title from current page
+//       const icon = document.querySelector("link[rel*='icon']") ? document.querySelector("link[rel*='icon']").href : "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"; // Grab favicon from current page, fallback if not found
+//       // const name = localStorage.getItem("name") || "My Drive - Google Drive"
+//       // const icon = localStorage.getItem("icon") || "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
 
-      doc.title = name
-      link.rel = "icon"
-      link.href = icon
+//       doc.title = name
+//       link.rel = "icon"
+//       link.href = icon
 
-      iframe.src = location.href
-      style.position = "fixed"
-      style.top = style.bottom = style.left = style.right = 0
-      style.border = style.outline = "none"
-      style.width = style.height = "100%"
+//       iframe.src = location.href
+//       style.position = "fixed"
+//       style.top = style.bottom = style.left = style.right = 0
+//       style.border = style.outline = "none"
+//       style.width = style.height = "100%"
 
-      doc.head.appendChild(link)
-      doc.body.appendChild(iframe)
+//       doc.head.appendChild(link)
+//       doc.body.appendChild(iframe)
 
-      const pLink = localStorage.getItem(encodeURI("pLink")) || "https://www.nasa.gov/"
-      location.replace(pLink)
+//       const pLink = localStorage.getItem(encodeURI("pLink")) || "https://www.nasa.gov/"
+//       location.replace(pLink)
 
-      const script = doc.createElement("script")
-      script.textContent = `
-        window.onbeforeunload = function (event) {
-          const confirmationMessage = 'Leave Site?';
-          (event || window.event).returnValue = confirmationMessage;
-          return confirmationMessage;
-        };
-      `
-      doc.head.appendChild(script)
-    }
-  }
-}
+//       const script = doc.createElement("script")
+//       script.textContent = `
+//         window.onbeforeunload = function (event) {
+//           const confirmationMessage = 'Leave Site?';
+//           (event || window.event).returnValue = confirmationMessage;
+//           return confirmationMessage;
+//         };
+//       `
+//       doc.head.appendChild(script)
+//     }
+//   }
+// }
 
-function turnonblank(){
-  localStorage.setItem('autoblank', true)
-  AB();
-  // window.location.reload();
-  document.getElementById('blankonbutton').style.display = 'none';
-  document.getElementById('blankoffbutton').style.display = 'block';
-}
+// function turnonblank(){
+//   localStorage.setItem('autoblank', true)
+//   AB();
+//   // window.location.reload();
+//   document.getElementById('blankonbutton').style.display = 'none';
+//   document.getElementById('blankoffbutton').style.display = 'block';
+// }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  if (localStorage.getItem('autoblank') === 'true') {
-    AB();
-  }
-});
+// document.addEventListener('DOMContentLoaded', (event) => {
+//   if (localStorage.getItem('autoblank') === 'true') {
+//     AB();
+//   }
+// });
 
-function turnoffblank(){
-  localStorage.setItem('autoblank', false);
-  window.location.reload();
-}
+// function turnoffblank(){
+//   localStorage.setItem('autoblank', false);
+//   window.location.reload();
+// }
 
 
 // ____________________________
 // Right Click Menu
 // ____________________________
 
-document.addEventListener('DOMContentLoaded', function() {
-  function injectContextMenu() {
-      // Create the div element
-      var div = document.createElement('div');
-      div.id = 'contextRightClickMenu';
-      div.className = 'context-right-menu';
-      div.style.display = 'none';
+// document.addEventListener('DOMContentLoaded', function() {
+//   function injectContextMenu() {
+//       // Create the div element
+//       var div = document.createElement('div');
+//       div.id = 'contextRightClickMenu';
+//       div.className = 'context-right-menu';
+//       div.style.display = 'none';
 
-      // Create the ul element
-      var ul = document.createElement('ul');
+//       // Create the ul element
+//       var ul = document.createElement('ul');
 
-      // Create the li elements and anchor elements
-      var li1 = document.createElement('li');
-      var a1 = document.createElement('a');
-      a1.href = 'javascript:AB()';
-      a1.setAttribute('onclick', 'AB()');
-      a1.textContent = 'About:blank';
-      li1.appendChild(a1);
+//       // Create the li elements and anchor elements
+//       var li1 = document.createElement('li');
+//       var a1 = document.createElement('a');
+//       a1.href = 'javascript:AB()';
+//       a1.setAttribute('onclick', 'AB()');
+//       a1.textContent = 'About:blank';
+//       li1.appendChild(a1);
 
-      var li2 = document.createElement('li');
-      var a2 = document.createElement('a');
-      a2.href = '/~';
-      a2.textContent = 'Apps';
-      li2.appendChild(a2);
+//       var li2 = document.createElement('li');
+//       var a2 = document.createElement('a');
+//       a2.href = '/~';
+//       a2.textContent = 'Apps';
+//       li2.appendChild(a2);
 
-      var li3 = document.createElement('li');
-      var a3 = document.createElement('a');
-      a3.href = '/0';
-      a3.textContent = 'Games';
-      li3.appendChild(a3);
+//       var li3 = document.createElement('li');
+//       var a3 = document.createElement('a');
+//       a3.href = '/0';
+//       a3.textContent = 'Games';
+//       li3.appendChild(a3);
 
-      var li4 = document.createElement('li');
-      var a4 = document.createElement('a');
-      a4.href = '/=';
-      a4.textContent = 'Settings';
-      li4.appendChild(a4);
+//       var li4 = document.createElement('li');
+//       var a4 = document.createElement('a');
+//       a4.href = '/=';
+//       a4.textContent = 'Settings';
+//       li4.appendChild(a4);
 
-      // Append li elements to ul
-      ul.appendChild(li1);
-      ul.appendChild(li2);
-      ul.appendChild(li3);
-      ul.appendChild(li4);
+//       // Append li elements to ul
+//       ul.appendChild(li1);
+//       ul.appendChild(li2);
+//       ul.appendChild(li3);
+//       ul.appendChild(li4);
 
-      // Append ul to div
-      div.appendChild(ul);
+//       // Append ul to div
+//       div.appendChild(ul);
 
-      // Append div to body
-      document.body.appendChild(div);
-      script('Right Click Menu Loaded')
+//       // Append div to body
+//       document.body.appendChild(div);
+//       script('Right Click Menu Loaded')
 
-      // Add event listeners
-      document.onclick = hideMenu;
-      document.oncontextmenu = rightClick;
+//       // Add event listeners
+//       document.onclick = hideMenu;
+//       document.oncontextmenu = rightClick;
 
-      function hideMenu() {
-          document.getElementById("contextRightClickMenu").style.display = "none";
-      }
+//       function hideMenu() {
+//           document.getElementById("contextRightClickMenu").style.display = "none";
+//       }
 
-      function rightClick(e) {
-          e.preventDefault();
+//       function rightClick(e) {
+//           e.preventDefault();
 
-          if (document.getElementById("contextRightClickMenu").style.display == "block") {
-              hideMenu();
-          } else {
-              var menu = document.getElementById("contextRightClickMenu");
-              menu.style.display = 'block';
-              menu.style.left = e.pageX + "px";
-              menu.style.top = e.pageY + "px";
-          }
-      }
-  }
+//           if (document.getElementById("contextRightClickMenu").style.display == "block") {
+//               hideMenu();
+//           } else {
+//               var menu = document.getElementById("contextRightClickMenu");
+//               menu.style.display = 'block';
+//               menu.style.left = e.pageX + "px";
+//               menu.style.top = e.pageY + "px";
+//           }
+//       }
+//   }
 
-  // Call the function to inject the context menu when DOM content is loaded
-  injectContextMenu();
-});
+//   // Call the function to inject the context menu when DOM content is loaded
+//   injectContextMenu();
+// });
 

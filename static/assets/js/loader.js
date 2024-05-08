@@ -17,27 +17,7 @@ Object.defineProperty(siteUrl, 'src', {
 
 urlInput.value = Ultraviolet.codec.xor.decode(encodedUrl);
 
-if (selectedTheme === 'deepsea') {
-    urlBar.style.background = "rgb(6, 22, 35)";
-} else if (selectedTheme === 'equinox') {
-    urlBar.style.backgroundImage = "url('/assets/img/topographic_splash.webp')";
-} else if (selectedTheme === 'swamp') {
-    urlBar.style.background = "rgb(12, 43, 22)";
-} else if (selectedTheme === 'ocean') {
-    urlBar.style.background = "rgb(2, 59, 57)";;
-} else if (selectedTheme === 'starry') {
-    urlBar.style.background = "rgb(63, 3, 53)";
-} else if (selectedTheme === 'magma') {
-    urlBar.style.background = "rgb(53, 1, 1)";
-} else if (selectedTheme === 'sunset') {
-    urlBar.style.background = "rgb(53, 52, 1)";
-} else if (selectedTheme === 'midnight') {
-    urlBar.style.background = "rgb(27, 27, 27)";
-} else if (selectedTheme === null) {
-    urlBar.style.background = "linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87))";
-} else {
-    urlBar.style.background = "linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87))";
-}
+
 
 function handleLoadEvent() {
     const decodedPart = getUrlDecodedPart(this.contentWindow.location.href);

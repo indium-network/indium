@@ -1,3 +1,4 @@
+@import url("./themes.css");
 @font-face {
     font-family: poppins;
     src: url(/assets/fonts/poppins.ttf);
@@ -10,7 +11,7 @@
 #urlBar {
     display: flex;
     align-items: center;
-    background-color: rgb(115, 11, 14) rgb(10, 23, 87) !important;
+    background-color: var(--secondary) !important;
     padding: 8px;
     position: fixed;
     top: 0;
@@ -75,8 +76,7 @@ iframe {
 }
 
 .fs:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .fs:active {
@@ -101,8 +101,7 @@ iframe {
 }
 
 .ab:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .ab:active {
@@ -127,8 +126,7 @@ iframe {
 }
 
 .arrow:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .arrow:active {
@@ -153,8 +151,7 @@ iframe {
 }
 
 .reload:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .reload:active {
@@ -179,8 +176,7 @@ iframe {
 }
 
 .devTools:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .devTools:active {
@@ -205,8 +201,7 @@ iframe {
 }
 
 .forward:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .forward:active {
@@ -238,9 +233,9 @@ iframe {
 }
 
 .back:hover {
-    color: rgba(255, 255, 255, 0.72);
-    /* background-color: rgba(255, 255, 255, 0.297); */
-    /* border: 2px solid rgba(199, 199, 199, 0.039); */
+    color: var(--secondary) !important;
+    /* background-color: var(--secondary);
+    border: 2px solid rgba(199, 199, 199, 0.039); */
 }
 
 .back:active {
@@ -267,8 +262,7 @@ iframe {
 }
 
 .exit:hover {
-    background-color: rgba(255, 255, 255, 0.297);
-    border: 2px solid rgba(199, 199, 199, 0.039);
+    color: var(--secondary) !important;
 }
 
 .exit:active {

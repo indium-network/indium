@@ -1,11 +1,41 @@
+/* 
+   The following CSS file contains custom theme variables for different themes used in a web application. 
+   Each theme is defined using the body[data-theme="theme-name"] selector, and within each theme, custom variables are defined to set the color scheme and font styles.
+
+   Example:
+   body[data-theme="theme-name"] {
+       --background: #color-code;
+       --secondary: #color-code;
+       --primary: #color-code;
+       --text: #color-code;
+       --textInverse: #color-code;
+       --font: font-name;
+   }
+*/
+
+/* 
+   The body[data-theme="default"] selector defines the default theme for the web application. 
+   It sets custom variables for background color, secondary color, primary color, text color, inverse text color, and font family.
+*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Major+Mono+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 body[data-theme="default"] {
 	--background: #1c1c1c;
-	--secondary: rgba(0, 0, 0, 0.2);
+	--secondary: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87));
 	--primary: #fff;
     --scroll: rgba(254, 25, 30,0.9);
 	--text: white;
 	--textInverse: white;
-	--font: Roboto;
+	--font: var(--bs-body-font-family);
+}
+
+body[data-theme="default"]  .fixed-nav-bar-right>a {
+	color: var(--text) !important;
+	background: rgba(0, 0, 0, 0.2) !important;
+}
+
+body[data-theme="default"]  button {
+	color: var(--text) !important;
+	background-color: initial !important;
 }
 
 body[data-theme="winter"] {
@@ -26,8 +56,9 @@ body[data-theme="echo"] {
 	--font: Roboto;
 }
 
-body[data-theme="echo"] .nav {
+body[data-theme="echo"] .fixed-nav-bar {
 	box-shadow: 0 5px 200px var(--primary);
+	margin-top: 0;
 }
 
 body[data-theme="lime"] {
@@ -297,6 +328,9 @@ body[data-theme="hub"] .logo {
 
 body[data-theme="hub"] #switchableidktheisis{
 	background-color: var(--secondary);
+	border-radius: 5px;
+	font-family: var(--font) !important;
+	/* padding: 0 !important; */
 }
 body[data-theme="hub"] p, h1:not(.title), h2, h3, h4, h5, h6, a, button, b, select, textarea, i{
 	color: var(--text) !important;
@@ -492,3 +526,14 @@ body[data-theme="greatsword"] {
 	--textInverse: #636363;
 	--font: Roboto;
 }
+
+body[data-theme="topographic"] {
+	--background: url('/assets/img/topo.jpeg');
+	--secondary: #222222;
+	--primary: #fff;
+	--text: #fff;
+	--textInverse: #636363;
+	--font: monospace;
+}
+
+

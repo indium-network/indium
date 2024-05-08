@@ -63,7 +63,7 @@ padding: 15px 30px 15px 30px;
 
   .app-card:hover {
     background-size: 400% 400%;
-  background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
+  background: var(--secondary);
   animation: gradient 5s ease infinite;
 }
 

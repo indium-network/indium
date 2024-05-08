@@ -88,6 +88,15 @@ textarea {
     text-decoration: none;
 }
 
+.sidebar-item i{
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* vertical-align: middle; */
+    font-size: 1.4rem !important;
+}
+
 /* Style for active sidebar item */
 .sidebar-item.active {
 /* background-color: red; */
@@ -138,7 +147,7 @@ background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !im
 }
 #themeCloakButtons>.active{
     border-radius: 10px;
-    background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !important;
+    background: var(--secondary) !important;
 }
 
 #tabCloakButtons{
@@ -150,7 +159,7 @@ background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !im
 
 #tabCloakButtons>.active{
     border-radius: 10px;
-    background: linear-gradient(to top right, rgb(115, 11, 14), rgb(10, 23, 87)) !important;
+    background: var(--secondary) !important;
 }
 .customTabCloak{
     color: #fff;
@@ -164,11 +173,3 @@ z-index: 100000;
 }
 
 
-body, p, h1:not(.title), h2, h3, h4, h5, h6, a, button, b, select, textarea, i {
-    color: var(--primary) !important;
-}
-
-
-body {
-    background-color: var(--background) !important;
-}
