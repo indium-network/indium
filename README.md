@@ -1,4 +1,4 @@
-# Indium
+# <center><img style="width: 2rem;margin-top: 200px;" src="/static/app.png"></center> Indium
 
 Welcome to Indium. This proxy is designed for speed and customization. As well as evading internet censorship.
 
@@ -11,14 +11,15 @@ Welcome to Indium. This proxy is designed for speed and customization. As well a
 | Tab Cloaking  | about:blank Cloaking  |
 | All Games From Hypackel Games | Bunch of apps |
 | Hiding site from browser history| No Ads|
+| Appearence Customization |
 
-## Current Developers
+## Developers
 
 - [Hypackel](https://github.com/Hypackel)
 
 ### Deployment Alternatives
 
-For more deployment options, join our [Discord Server](https://discord.gg/vsR88EbW7H) for various ways to deploy Indium.
+For more deployment options, join our [Discord Server](https://discord.hypackel.com) for various ways to deploy Indium.
 This includes methods of deploying to Render/OnRender.
 
 ### GitHub Codespaces
@@ -32,8 +33,8 @@ pnpm i && pnpm start
 
 3. In the terminal at the bottom, paste `pnpm i && pnpm start`.
 4. Respond to the application popup by clicking "Make public."
-   > [!IMPORTANT]
-   > Make sure you click the "Make public." button, or the it won't function properly.
+> [!IMPORTANT]
+> Make sure you click the "Make public." button, or the it won't function properly.
 5. Access the deployed website from the ports tab.
 6. For subsequent uses in the same codespace, just run `pnpm start`
 
@@ -44,18 +45,18 @@ pnpm i && pnpm start
 3. Go to the ports tab, Click Forward A Port, And type the port number.
 4. Right-click Visibility and set Port Visibility to Public.
 
-### Discord
+## Discord
 
-[![Join us on Discord](https://invidget.switchblade.xyz/ymUdFb9r8x?theme=dark)](https://discord.gg/ymUdFb9r8x)
+[![Join us on Discord](https://invidget.switchblade.xyz/ymUdFb9r8x?theme=dark)](https://discord.hypackel.com)
 
 ## TODO
 
 - [x] Make Right Click menu on all pages
 - [x] make right click menu work
 - [x] Fix Search on games page
-- [ ] Add Themes
-- [ ] Put The Game Images Locally so it wont be blocked
-- [ ] Drop the proxy
+- [x] Add Themes
+- [10%] Put The Game Images Locally so it wont be blocked
+- [ ] Release the proxy
 - [ ] Remove the Unnecessary Files
 - [ ] Put Docker Images
 - [ ] Make More Tutorials only on discord
