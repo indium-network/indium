@@ -47,7 +47,8 @@ pnpm i && pnpm start
 
 ## Discord
 
-[![Join us on Discord](https://invidget.switchblade.xyz/ymUdFb9r8x?theme=dark)](https://discord.hypackel.com)
+[![Join us on Discord](https://invidget.switchblade.xyz/ymUdFb9r8x?theme=dark)](https://discord.hypackel.com) 
+
 
 ## TODO
 
