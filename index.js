@@ -56,6 +56,9 @@ app.get('/privacy', (req, res) => {
 app.get('/@', (req, res) => {
   res.sendFile(path.join(__dirname, './static/agloader.html'));
 });
+app.get('/credits', (req, res) => {
+  res.sendFile(path.join(__dirname, './static/credits.html'));
+});
 // app.get('/credits', (req, res) => {
 //   res.sendFile(path.join(__dirname, './static/credits.html'));
 // });
