@@ -74,12 +74,9 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
     
     const options = [
       "Right-Click to access more features",
-      // "Set a custom background in settings.",
       "Tab Cloaking is highly recommended",
       "About:Blank Cloak is highly recommended",
       "The #1 Games Site, with 30K users daily",
-      // "The #1 site unblocker, with 90K users daily",
-      // "Finally, an actual site unblocker that works fast!",
       "Do not share this link with anyone.",
       "Join our Discord at discord.hypackel.com",
       "Join our community at discord.hypackel.com",

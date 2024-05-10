@@ -15,10 +15,6 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
-
-<style>
-
-</style>
 <body style="overflow-x: hidden;scrollbar-color: red #1c1c1c !important;">
     <div style="width: 100vw;height: 100vh;z-index: -100000;position: absolute;" id="particles-js"></div>
     <div id="fixed-nav-bar" class="fixed-nav-bar">
@@ -64,85 +60,7 @@
     </header>
 
 <style>
-  .searchforapps{
-    border: 0;
-    outline: 0;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.3);
-padding: 15px 30px 15px 30px;
-    background-color: rgba(0,0,0,0.4);
-    justify-content: center;
-    display: flex;
-    text-align: center;
-  }
-  .app-card{
-    
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.3);
-    width: 300px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
-    transition: 0.7s;
-  }
-  .app-list{
-    display: flex;
-    color: #fff;
-    flex-wrap: wrap;
-    gap: 30px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .description {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-  .app-image{
-    background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-    object-fit: cover;
-    /* aspect-ratio: inherit; */
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    transition: 0.7s !important;
-    text-align: center;
-    height: 150px;
-    /* transition: ease-in-out; */
-    width: 270px;
-    border-radius: 15px !important;
-  }
-
-  .app-image:hover{
-    border-radius: 5px !important;
-    /* transition: ease-in-out; */
-  }
-
-
-  .app-card:hover {
-    background-size: 400% 400%;
-  background: var(--secondary);
-  animation: gradient 5s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
+  
 </style>
 
 <main style="width: 100vw;">
@@ -156,177 +74,15 @@ padding: 15px 30px 15px 30px;
   
     <div id="app-list" class="app-list">
   </div>
-    <script>
-      function encode(str) {
-    if (!str) return str;
-    return encodeURIComponent(
-        str
-            .toString()
-            .split('')
-            .map((char, ind) =>
-                ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
-            )
-            .join('')
-    );
-}
-
-function openAg(url, ag) {
-  localStorage.setItem("currentAg", ag)
-  
-  agU = encode(url);
-  localStorage.setItem('agUrl', agU);
-  location.href = '/@';
-}
-
-
-
-        // Fetch game data from the separate JSON file
-        fetch("/assets/json/apps.json")
-    .then(response => response.json())
-    .then(data => {
-        const gameList = document.getElementById("app-list");
-        const searchInput = document.getElementById("searchInput");
-
-        // Function to filter games based on search query
-        const filterGames = () => {
-            const searchTerm = searchInput.value.toLowerCase();
-
-            // Filter broken games and non-broken games
-            const brokenGames = data.filter(game =>
-                game.name.toLowerCase().includes(searchTerm) && game.broken
-            );
-            const nonBrokenGames = data.filter(game =>
-                game.name.toLowerCase().includes(searchTerm) && !game.broken
-            );
-
-            // Clear existing game list
-            gameList.innerHTML = "";
-
-            
-
-            // Display non-broken games
-            nonBrokenGames.forEach(game => {
-                displayGame(game);
-            });
-            // Display broken games
-            brokenGames.forEach(game => {
-                displayGame(game);
-            });
-        };
-
-        // Function to display a game card
-        const displayGame = (game) => {
-          const isBroken = game.broken === true;
-                const titleColor = isBroken ? 'red' : 'inherit'; // Set title color based on broken status
-            const gameCard = document.createElement("div");
-            gameCard.innerHTML = `
-                <div data-url="${game.url}" data-name="${game.name}" class="app-card">
-                    <img class="app-image" src="${game.imageSrc}" alt="">
-                    <br>
-                    <h1 style="color: ${titleColor};" class="title">${game.name}</h1>
-                    <p class="description">
-                        ${game.description}
-                    </p>
-                    <button class="btn btn-success" id="launchapp">Launch</button>
-                </div>
-            `;
-            // if (game.broken == true) {
-            //       document.getElementById('title').style.color = 'red';
-            //     }
-            gameList.appendChild(gameCard);
-        };
-
-        // Initial display of all games
-        filterGames();
-
-        // Event listener for search input
-        searchInput.addEventListener("input", filterGames);
-    })
-    .catch(error => console.error("Error loading JSON:", error));
-
-
-
-    
-
-
-    // Event listener for the "Launch" button click
-    document.addEventListener("click", function(event) {
-        if (event.target && event.target.id === "launchapp") {
-            // Find the parent node (game card) of the clicked button
-            const gameCard = event.target.closest(".app-card");
-
-            // Extract URL and name from the game card
-            const gameUrl = gameCard.getAttribute("data-url");
-            const gameName = gameCard.getAttribute("data-name");
-
-            // Call the openAg function with the extracted URL and name
-            openAg(gameUrl, gameName);
-        }
-    });
-    </script>
-    <!-- <div class="bottomfooter">
-        <div class="leftside">
-            <a id="roundiconbuttonn" class="roundiconbuttonn" href="https://discord.gg/sWPHCdxCPU"><i onclick="window.location.href= 'DISCORD URL'" class="fa-brands fa-discord"></i></a>
-        </div>
-        <div class="centerside">
-            <p class="icnbatnalt" id="realtime">03:14:26</p>
-        </div>
-        <div class="rightside">
-            <a class="legalbutton" href="#">Privacy Policy</a>&ThickSpace;|&ThickSpace;
-            <a href="eua" class="legalbutton">EULA</a>
-        </div>
-    </div> -->
 </main>
-<style type="text/css"> 
-  .context-menu {
-    transition: 0.7s; 
-    border-radius: 10px;
-    position: absolute; 
-    text-align: center; 
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
-    backdrop-filter: saturate(180%) blur(10px);
-  } 
-
-  .context-menu ul { 
-    padding: 0px; 
-    margin: 0px; 
-    min-width: 150px; 
-    list-style: none; 
-  } 
-
-  .context-menu ul li { 
-    padding-bottom: 7px; 
-    padding-top: 7px; 
-  } 
-
-  .context-menu ul li a { 
-    transition: 0.2s;
-    text-decoration: none; 
-    color: #fff; 
-  } 
-  .context-menu ul li a:hover{
-    color: rgba(255, 255, 255, 0.659);
-  }
-
-  .context-menu ul li {
-    transition: 0.7s;
-  }
-  
-  .context-menu ul li:hover { 
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(-45deg, rgb(115, 11, 14), rgb(10, 23, 87));
-  } 
-</style> 
 
 
 
 
 <script src="/assets/js/script.js"></script>
+<script src="/assets/js/apps.js"></script>
 <script rel="preload" src="/assets/js/main.js"></script>
   <script src="/assets/js/index.js"></script>
-<!-- <script src="/assets/js/snow.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
