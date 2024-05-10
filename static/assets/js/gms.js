@@ -20,6 +20,33 @@ function rightClick(e) {
 
 
 
+// ________________________________________________________________
+// Adds Game Count to the nav menu
+// ________________________________________________________________
+
+
+fetch('/assets/json/games.json')
+    .then(response => response.json())
+    .then(data => {
+        // Now 'data' contains the parsed JSON data
+        let numberOfObjects;
+
+        if (Array.isArray(data)) {
+            numberOfObjects = data.length; // If 'data' is an array of objects
+        } else if (typeof data === 'object') {
+            numberOfObjects = Object.keys(data).length; // If 'data' is an object
+        } else {
+            console.error('Invalid JSON data format');
+            return;
+        }
+
+        console.log('Number of objects:', numberOfObjects);
+        document.getElementById("objectCount").innerHTML = numberOfObjects;
+        // document.getElementsByName('search')[0].placeholder = "Games: " + numberOfObjects;
+    })
+    .catch(error => console.error('Error reading JSON file:', error));
+
+
 
 
 
@@ -31,12 +58,24 @@ let startIndex = 0;
 
     function displayCards(data) {
         const gameList = document.getElementById("app-list");
-
+    
+        // Sort games based on broken status
+        data.sort((a, b) => {
+            if (a.broken && !b.broken) {
+                return 1; // Move broken games to the bottom
+            } else if (!a.broken && b.broken) {
+                return -1; // Move non-broken games to the top
+            } else {
+                return 0; // Maintain the order for games with the same broken status
+            }
+        });
+    
         // Display cards based on startIndex and cardsPerLoad
         for (let i = startIndex; i < Math.min(startIndex + cardsPerLoad, data.length); i++) {
             displayGame(data[i]);
         }
     }
+    
 
     // Function to handle loading more cards
     function loadMoreCards(data) {
@@ -150,11 +189,44 @@ const filterGames = () => {
                 .join('')
         );
     }
-    
+
+
     function openAg(url, ag) {
-      localStorage.setItem("currentAg", ag)
-      
-      agU = encode(url);
-      localStorage.setItem('agUrl', agU);
-      location.href = '/@';
+        // Replace index.html with the appropriate file name if it exists in the URL
+        const replacedUrl = url.includes("index.html") ? url.replace("index.html", "") : url;
+    
+        // URLs to try
+        const urlsToTry = [
+            replacedUrl + "game.html",
+            replacedUrl + "file/index.html",
+            replacedUrl + "game/index.html"
+        ];
+    
+        // Helper function to try each URL
+        const tryUrls = async () => {
+            for (const currentUrl of urlsToTry) {
+                try {
+                    const response = await fetch(currentUrl, { method: 'HEAD' });
+                    if (response.ok) {
+                        // If the URL exists, proceed to open it
+                        localStorage.setItem("currentAg", ag);
+                        localStorage.setItem('agUrl', encode(currentUrl));
+                        location.href = '/@';
+                        return;
+                    }
+                } catch (error) {
+                    console.error("Error checking URL:", error);
+                }
+            }
+            // If all URLs fail, revert to the original URL
+            console.error("All URLs failed, reverting to the original URL.");
+            localStorage.setItem("currentAg", ag);
+            localStorage.setItem('agUrl', encode(replacedUrl));
+            location.href = '/@';
+        };
+    
+        // Start trying URLs
+        tryUrls();
     }
+    
+    

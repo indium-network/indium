@@ -21,7 +21,7 @@ if (localStorage.getItem('snow') === 'true') {
 // Remove Mobile Users
 // __________________________
 window.addEventListener("load", function () {
-    loadScript("/worker.js");
+    // loadScript("/worker.js");
     if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/=") {
       if (window.innerWidth < 676) {
         location.href = "/mobile-lock";

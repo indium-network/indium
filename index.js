@@ -59,21 +59,7 @@ app.get('/@', (req, res) => {
 app.get('/credits', (req, res) => {
   res.sendFile(path.join(__dirname, './static/credits.html'));
 });
-// app.get('/credits', (req, res) => {
-//   res.sendFile(path.join(__dirname, './static/credits.html'));
-// });
-// app.get('/partners', (req, res) => {
-//   res.sendFile(path.join(__dirname, './static/partners.html'));
-// });
 app.get("/worker.js", (req, res) => {
-//   request("https://cdn.surfdoge.pro/worker.js", (error, response, body) => {
-//     if (!error && response.statusCode === 200) {
-//       res.setHeader("Content-Type", "text/javascript");
-//       res.send(body);
-//     } else {
-//       res.status(500).send("Error fetching worker script");
-//     }
-//   });
 res.sendFile(path.join(__dirname, './static/worker.js'));
 });
 app.use((req, res) => {
@@ -157,13 +143,3 @@ function startServer() {
 server.listen({
   port,
 });
-
-// process.on("SIGINT", shutdown);
-// process.on("SIGTERM", shutdown);
-
-// function shutdown() {
-//   console.log("SIGTERM signal received: closing HTTP server");
-//   server.close();
-//   bareServer.forEach((bare) => bare.close());
-//   process.exit(0);
-// }
