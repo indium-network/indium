@@ -9,7 +9,7 @@ import { createBareServer } from "@tomphttp/bare-server-node";
 import request from "@cypress/request";
 import basicAuth from 'express-basic-auth';
 import config from "./password.js"
-
+ 
 const __dirname = path.resolve();
 const server = http.createServer();
 const app = express(server);
