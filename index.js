@@ -47,35 +47,35 @@ app.get('/', requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/index.html'));
 });
 
-app.get('/!', (req, res) => {
+app.get('/!', requiresAuth(),(req, res) => {
   res.sendFile(path.join(__dirname, './static/loader.html'));
 });
-app.get('/~', (req, res) => {
+app.get('/~', requiresAuth(),(req, res) => {
   res.sendFile(path.join(__dirname, './static/apps.html'));
 });
-app.get('/0', (req, res) => {
+app.get('/0',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/gms.html'));
 });
-app.get('/=', (req, res) => {
+app.get('/=',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/settings.html'));
 });
-app.get('/mobile-lock', (req, res) => {
+app.get('/mobile-lock',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/mobile.html'));
 });
-app.get('/d3', (req, res) => {
+app.get('/d3',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/gmsd3.html'));
 });
-app.get('/privacy', (req, res) => {
+app.get('/privacy',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/privacy.html'));
 });
 
-app.get('/@', (req, res) => {
+app.get('/@',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/agloader.html'));
 });
-app.get('/credits', (req, res) => {
+app.get('/credits',requiresAuth(), (req, res) => {
   res.sendFile(path.join(__dirname, './static/credits.html'));
 });
-app.get("/worker.js", (req, res) => {
+app.get("/worker.js",requiresAuth(), (req, res) => {
 res.sendFile(path.join(__dirname, './static/worker.js'));
 });
 app.use((req, res) => {
