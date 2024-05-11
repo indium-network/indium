@@ -29,7 +29,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'https://indium.hypackel.com',
+  baseURL: 'https://indium.hypackel.com/',
   clientID: 'GQYE2IDSGfHwNQYe0EySGId1YOXzyXFx',
   issuerBaseURL: 'https://indium-network.us.auth0.com'
 };
