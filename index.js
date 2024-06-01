@@ -39,7 +39,7 @@ const config = {
 //   app.use(basicAuth({ users: config.users, challenge: true }))
 // }
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "static")));
 
 app.use(auth(config));
 // req.isAuthenticated is provided from the auth router
