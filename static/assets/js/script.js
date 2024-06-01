@@ -371,7 +371,7 @@ setTimeout(function() {
 // ____________________________
 
 if(localStorage.getItem('autoblank') == null){
-  localStorage.setItem('autoblank', true)
+  localStorage.setItem('autoblank', false)
   window.location.reload()
 }
 
