@@ -19,7 +19,7 @@ Welcome to Indium. This proxy is designed for speed and customization. As well a
 
 ### Deployment Alternatives
 
-For more deployment options, join our [Discord Server](https://discord.hypackel.com) for various ways to deploy Indium.
+For more deployment options, join our [Discord Server](https://discord.gg/N3AY3bP7v5) for various ways to deploy Indium.
 This includes methods of deploying to Render/OnRender.
 
 ### GitHub Codespaces
@@ -50,8 +50,8 @@ pnpm i && pnpm start
 [![Join us on Discord](https://invidget.switchblade.xyz/ymUdFb9r8x?theme=dark)](https://discord.hypackel.com) 
 
 
-## TODO
+## Disclaimer
 
-- [ ] Release the proxy
-- [ ] Remove the Unnecessary Files
-- [ ] Put Docker Images
+> TL;DR: dont do bad stuff on the proxy. just dont
+
+> By using this proxy, you agree that the creators and contributors are not liable for any actions you take while using it. You are solely responsible for your use of this proxy and ensuring compliance with all applicable laws and regulations. The creators and contributors disclaim any liability for misuse, illegal activity, or any consequences arising from the use of this proxy. Use at your own risk. 

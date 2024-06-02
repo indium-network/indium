@@ -7,11 +7,10 @@ import { join } from "node:path";
 import { hostname } from "node:os";
 import { createBareServer } from "@tomphttp/bare-server-node";
 import request from "@cypress/request";
-// import basicAuth from 'express-basic-auth';
-// import config from "./password.js"
+import basicAuth from 'express-basic-auth';
+import config from "./password.js"
 
-import pkg from 'express-openid-connect';
-const { auth, requiresAuth } = pkg;
+
  
 const __dirname = path.resolve();
 const server = http.createServer();
@@ -25,57 +24,47 @@ app.use(
   })
 );
 
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'https://indium.hypackel.com/',
-  clientID: 'GQYE2IDSGfHwNQYe0EySGId1YOXzyXFx',
-  issuerBaseURL: 'https://indium-network.us.auth0.com'
-};
+if (config.challenge) {
 
-// if (config.challenge) {
-
-//   app.use(basicAuth({ users: config.users, challenge: true }))
-// }
+  app.use(basicAuth({ users: config.users, challenge: true }))
+}
 
 app.use(express.static(path.join(__dirname, "static")));
 
-app.use(auth(config));
 // req.isAuthenticated is provided from the auth router
-app.get('/', requiresAuth(), (req, res) => {
+app.get('/',  (req, res) => {
   res.sendFile(path.join(__dirname, './static/index.html'));
 });
 
-app.get('/!', requiresAuth(),(req, res) => {
+app.get('/!', (req, res) => {
   res.sendFile(path.join(__dirname, './static/loader.html'));
 });
-app.get('/~', requiresAuth(),(req, res) => {
+app.get('/~', (req, res) => {
   res.sendFile(path.join(__dirname, './static/apps.html'));
 });
-app.get('/0',requiresAuth(), (req, res) => {
+app.get('/0', (req, res) => {
   res.sendFile(path.join(__dirname, './static/gms.html'));
 });
-app.get('/=',requiresAuth(), (req, res) => {
+app.get('/=', (req, res) => {
   res.sendFile(path.join(__dirname, './static/settings.html'));
 });
-app.get('/mobile-lock',requiresAuth(), (req, res) => {
+app.get('/mobile-lock', (req, res) => {
   res.sendFile(path.join(__dirname, './static/mobile.html'));
 });
-app.get('/d3',requiresAuth(), (req, res) => {
+app.get('/d3', (req, res) => {
   res.sendFile(path.join(__dirname, './static/gmsd3.html'));
 });
-app.get('/privacy',requiresAuth(), (req, res) => {
+app.get('/privacy', (req, res) => {
   res.sendFile(path.join(__dirname, './static/privacy.html'));
 });
 
-app.get('/@',requiresAuth(), (req, res) => {
+app.get('/@', (req, res) => {
   res.sendFile(path.join(__dirname, './static/agloader.html'));
 });
-app.get('/credits',requiresAuth(), (req, res) => {
+app.get('/credits', (req, res) => {
   res.sendFile(path.join(__dirname, './static/credits.html'));
 });
-app.get("/worker.js",requiresAuth(), (req, res) => {
+app.get("/worker.js", (req, res) => {
 res.sendFile(path.join(__dirname, './static/worker.js'));
 });
 app.use((req, res) => {
