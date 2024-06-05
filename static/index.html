@@ -134,9 +134,8 @@
       </style>
     </div>
     <!-- Button trigger modal -->
-    <button style="visibility: visible !important;position: relative;color: #1c1c1c !important;border: 0;" type="button"
+    <button style="visibility: hidden !important;position: relative;color: var(--background) !important;border: 0;background-color: var(--background);" type="button"
       data-bs-toggle="modal" class="pleaseOpenModal" id="pleaseOpenModal" data-bs-target="#exampleModal">
-      Launch demo modal
     </button>
 
     <!-- Modal -->
@@ -151,7 +150,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div style="color: #fff !important;background-color: #1c1c1c;" class="modal-body">
-            TL;DR: dont do bad stuff on the proxy. just dont
+            TL;DR: If you do bad stuff, you are responsible.
             <br><br>
             By using this proxy and site, you agree that the creators and contributors are not liable for any actions
             you take
@@ -163,6 +162,12 @@
             <small>
               <pre>btw by clicking x at the top you also are accepting liability</pre>
             </small>
+            
+            <label class="switch">
+              <input type="checkbox" id="stopShowingLegal" control-id="ControlID-4">
+              <span class="slider"></span>
+            </label>
+            Don't show again
           </div>
           <div style="color: #fff !important;background-color: #1c1c1c;" class="modal-footer">
             <button style="color: initial;" type="button" onclick="closeModalAndAccept()" class="btn btn-success">I
@@ -259,9 +264,22 @@
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
   <script>
+const stopShowingLegal = document.getElementById("stopShowingLegal");
+
+if (stopShowingLegal) {
+  stopShowingLegal.addEventListener("change", function () {
+        if (stopShowingLegal.checked) {
+          localStorage.setItem("stopShowingLegal", "true");
+        } else{
+          localStorage.setItem("stopShowingLegal", "false");
+        }
+    });
+}
+
     const overlay = document.getElementById("overlay");
     window.onload = function () {
-      $('#pleaseOpenModal').click();
+      if (localStorage.getItem("stopShowingLegal" ) == "false" || localStorage.getItem("stopShowingLegal" ) == null){
+        $('#pleaseOpenModal').click();
       $("#searchbar").prop("disabled", true);
       $("#pleaseOpenModal").prop("disabled", true);
       
@@ -270,6 +288,8 @@
                     event.stopPropagation();
                 });
                 
+      }
+      
 
 
     }
