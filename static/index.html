@@ -256,54 +256,16 @@
   </main>
 
   <script src="/assets/js/script.js?v=0.0.1"></script>
-  <script rel="preload" src="/assets/js/main.js?v=0.0.1"></script>
-  <script src="/assets/js/index.js?v=0.0.1"></script>
+  <script rel="preload" src="/assets/js/main.js?v=0.0.2"></script>
+  <script src="/assets/js/index.js?v=0.0.2"></script>
+  <script src="/assets/js/loaders.js?v=0.0.2"></script>
   <!-- <script src="/assets/js/snow.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
   <script>
-const stopShowingLegal = document.getElementById("stopShowingLegal");
 
-if (stopShowingLegal) {
-  stopShowingLegal.addEventListener("change", function () {
-        if (stopShowingLegal.checked) {
-          localStorage.setItem("stopShowingLegal", "true");
-        } else{
-          localStorage.setItem("stopShowingLegal", "false");
-        }
-    });
-}
-
-    const overlay = document.getElementById("overlay");
-    window.onload = function () {
-      if (localStorage.getItem("stopShowingLegal" ) == "false" || localStorage.getItem("stopShowingLegal" ) == null){
-        $('#pleaseOpenModal').click();
-      $("#searchbar").prop("disabled", true);
-      $("#pleaseOpenModal").prop("disabled", true);
-      
-      overlay.style.display = 'block';
-                overlay.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                });
-                
-      }
-      
-
-
-    }
-    function closeModalAndAccept() {
-      overlay.style.display = 'none';
-      overlay.style.zIndex = '-11000000000';
-      document.getElementById('leftside').style.zIndex= '1000000000000';
-      $("#pleaseOpenModal").prop("disabled", true);
-      overlay.style.display = 'none';
-      $("#searchbar").prop("disabled", false);
-      // $("#searchbar").prop("disabled", true);
-      $('#exampleModal').modal('hide');
-
-    }
   </script>
 </body>
 
