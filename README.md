@@ -2,7 +2,7 @@
 
 Welcome to Indium. This proxy is designed for speed and customization. As well as evading internet censorship.
 
-![image info](./static/assets/img/readme.png)
+![image info](./public/assets/img/readme.png)
 
 ## Key Features
 
